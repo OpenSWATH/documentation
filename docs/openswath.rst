@@ -31,22 +31,29 @@ We recommend to compile a nightly snapshot from the `OpenMS Git repository
 
 Tutorial
 --------
-The core step of OpenSWATH conducts signal processing by data extraction from DIA data. It requires mzXML or mzML files. Since 2017, `ProteoWizard
-<http://proteowizard.sourceforge.net/>`_ natively supports conversion of SCIEX, Thermo and Waters DIA data. The generated mzXML and mzML files are directly compatible with OpenSWATH. Previous workarounds are not necessary anymore and should be avoided.
+The core step of OpenSWATH conducts signal processing by data extraction from
+DIA data. It requires mzXML or mzML files. Since 2017, `ProteoWizard
+<http://proteowizard.sourceforge.net/>`_ natively supports conversion of SCIEX,
+Thermo and Waters DIA data. The generated mzXML and mzML files are directly
+compatible with OpenSWATH. Previous workarounds are not necessary anymore and
+should be avoided.
 
 Four native interfaces exist to use OpenSWATH:
 
 Integrated Executable
 ~~~~~~~~~~~~~~~~~~~~~
-Since OpenMS 2.0, the executable ``OpenSwathWorkflow`` provides a fast and efficient analysis. Most users will want to directly use this workflow.
+Since OpenMS 2.0, the executable ``OpenSwathWorkflow`` provides a fast and
+efficient analysis. Most users will want to directly use this workflow.
 
-An extended tutorial describing a complete OpenSWATH analysis workflow using ``OpenSwathWorkflow`` was recently published [4]_ and is also available from `bioRxiv
-<http://biorxiv.org/content/early/2016/03/19/044552>`_.
+An extended tutorial describing a complete OpenSWATH analysis workflow using
+``OpenSwathWorkflow`` was recently published [4]_ and is also available from
+`bioRxiv <http://biorxiv.org/content/early/2016/03/19/044552>`_.
 
 Classic TOPP Workflow
 ~~~~~~~~~~~~~~~~~~~~~
-The original "classic" workflow provides different OpenMS TOPP [5]_ executables that can also be accessed from different supported workflow managers. The `OpenMS User Tutorial
-<http://www.openms.de/tutorials/>`_ provides detailed instructions.
+The original "classic" workflow provides different OpenMS TOPP [5]_ executables
+that can also be accessed from different supported workflow managers. The
+`OpenMS User Tutorial <http://www.openms.de/tutorials/>`_ provides detailed instructions.
 
 Python interface via pyOpenMS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,18 +66,34 @@ OpenSWATH is available as native application on Illumina `BaseSpace
 <http://www.basespace.com>`_. Together with `SCIEX OneOmics
 <https://sciex.com/applications/life-science-research/multi-omics-bioinformatics>`_ it can analyse SWATH-MS data on the Amazon Cloud.
 
-Data
-----
+Tutorial Data
+-------------
+
 Availability
 ~~~~~~~~~~~~
-The SWATH-MS Gold Standard and *Streptococcus pyogenes* data sets are available from the PeptideAtlas raw data repository with accession number `PASS00289
-<http://www.peptideatlas.org/PASS/PASS00289>`_.
 
-The tutorial data [4]_ is available from the PeptideAtlas raw data repository with accession number `PASS00779
-<http://www.peptideatlas.org/PASS/PASS00779>`_.
+To learn OpenSWATH, we suggest to use the *M. tuberculosis* dataset published
+alongside the 2017 Methods Mol Biol. OpenSWATH tutorial [4]_ which is available
+from the PeptideAtlas raw data repository with accession number 
+`PASS00779 <http://www.peptideatlas.org/PASS/PASS00779>`_.
+
+The SWATH-MS Gold Standard and *Streptococcus pyogenes* data sets (used in the
+original 2014 Nature Biotechnoly publication) are available from the
+PeptideAtlas raw data repository with accession number 
+`PASS00289 <http://www.peptideatlas.org/PASS/PASS00289>`_.
 
 The Skyline results are available from `Skyline Panorama Webserver
 <https://daily.panoramaweb.org/labkey/project/Aebersold/rosenberger/OpenSWATH_SGS/begin.view>`_.
+
+Mycobacterium tuberculosis data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 3 mzML instrument data files (centroided)
+- 3 WIFF raw instrument data files 
+- Mtb assay library (for OpenMS 2.1)
+- Mtb assay library (for older OpenMS)
+- Swath windows file for analysis
+- iRT assay file (TraML format)
 
 SWATH-MS Gold Standard
 ~~~~~~~~~~~~~~~~~~~~~~
