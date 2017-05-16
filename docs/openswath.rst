@@ -66,6 +66,9 @@ Availability
 The SWATH-MS Gold Standard and *Streptococcus pyogenes* data sets are available from the PeptideAtlas raw data repository with accession number `PASS00289
 <http://www.peptideatlas.org/PASS/PASS00289>`_.
 
+The tutorial data [4]_ is available from the PeptideAtlas raw data repository with accession number `PASS00779
+<http://www.peptideatlas.org/PASS/PASS00779>`_.
+
 The Skyline results are available from `Skyline Panorama Webserver
 <https://daily.panoramaweb.org/labkey/project/Aebersold/rosenberger/OpenSWATH_SGS/begin.view>`_.
 
