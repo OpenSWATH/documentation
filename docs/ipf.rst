@@ -114,12 +114,22 @@ Data
 Availability
 ~~~~~~~~~~~~
 
-The IPF data repositories will be available soon.
+The synthetic phosphopeptide reference mass spectrometry proteomics data is available from PRIDE/ProteomeXchange with the data set identifier `PXD004573
+<https://www.ebi.ac.uk/pride/archive/projects/PXD004573>`_.
+
+The enriched U2OS phosphopeptide mass spectrometry proteomics data is available from PRIDE/ProteomeXchange with the data set identifier `PXD006056
+<https://www.ebi.ac.uk/pride/archive/projects/PXD006056>`_.
+
+The 14-3-3β phosphopeptide interactomics mass spectrometry proteomics data is available from PRIDE/ProteomeXchange with the data set identifier `PXD006057
+<https://www.ebi.ac.uk/pride/archive/projects/PXD006057>`_.
+
+The twin study mass spectrometry proteomics data is available from PRIDE/ProteomeXchange with the data set identifier `PXD004574
+<https://www.ebi.ac.uk/pride/archive/projects/PXD004574>`_.
 
 References
 ----------
 
-.. [1] Manuscript submitted.
+.. [1] Inference and quantification of peptidoforms in large sample cohorts by SWATH-MS. Rosenberger G, Liu Y, Röst HL, Ludwig C, Buil A, Bensimon A, Soste M, Spector TD, Dermitzakis ET, Collins BC, Malmström L, Aebersold R. Nat Biotechnol. 2017 Jun 12. doi: 10.1038/nbt.3908. [Epub ahead of print] PMID: 28604659
 
 .. [2] Röst HL, Rosenberger G, Navarro P, Gillet L, Miladinović SM, Schubert OT, Wolski W, Collins BC, Malmström J, Malmström L, Aebersold R. OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data. Nat Biotechnol. 2014 Mar 10;32(3):219-23. doi: 10.1038/nbt.2841. PMID: 24727770
 
