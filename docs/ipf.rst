@@ -71,13 +71,17 @@ Then, a TraML file containing the detection and identification transitions is be
 
 .. code-block:: bash
 
-   OPENMS_DATA_PATH=~/modified_path/share OpenSwathAssayGenerator -in db_assays.TraML -out db_assays_ptms.TraML -swath_windows_file /IMSB/users/georger/html/oswptm/swath64.txt -allowed_fragment_charges 1,2,3,4 -enable_ms1_uis_scoring -max_num_alternative_localizations 20 -enable_identification_specific_losses -enable_identification_ms2_precursors
+   OPENMS_DATA_PATH=~/modified_path/share OpenSwathAssayGenerator -in db_assays.TraML -out db_assays_ptms.TraML \
+   -swath_windows_file /IMSB/users/georger/html/oswptm/swath64.txt -allowed_fragment_charges 1,2,3,4 \
+   -enable_ms1_uis_scoring -max_num_alternative_localizations 20 -enable_identification_specific_losses \
+   -enable_identification_ms2_precursors
 
 We then append decoys to the library:
 
 .. code-block:: bash
 
-   OPENMS_DATA_PATH=~/modified_path/share  OpenSwathDecoyGenerator -in db_assays_ptms.TraML -out db_assays_ptms_decoys.TraML -method shuffle -append -mz_threshold 0.1 -remove_unannotated
+   OPENMS_DATA_PATH=~/modified_path/share  OpenSwathDecoyGenerator -in db_assays_ptms.TraML \
+   -out db_assays_ptms_decoys.TraML -method shuffle -append -mz_threshold 0.1 -remove_unannotated
 
 2. Targeted data extraction using OpenSWATH
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -86,7 +90,11 @@ The next step is conducted using OpenSWATH.
 
 .. code-block:: bash
 
-   OPENMS_DATA_PATH=~/modified_path/share OpenSwathWorkflow -min_upper_edge_dist 1 -mz_extraction_window 0.05 -rt_extraction_window 600 -extra_rt_extraction_window 100 -min_rsq 0.95 -min_coverage 0.6 -use_ms1_traces -enable_uis_scoring -Scoring:uis_threshold_peak_area 0 -Scoring:uis_threshold_sn -1 -Scoring:stop_report_after_feature 5 -tr_irt DIA_iRT.TraML -tr /cluster/scratch/georger/KGG/library/enriched/enriched_ipf_decoys.TraML -threads 8 -in MSDATA.mzXML.gz -out_tsv MSDATA_RESULTS.tsv
+   OPENMS_DATA_PATH=~/modified_path/share OpenSwathWorkflow -min_upper_edge_dist 1 -mz_extraction_window 0.05 \
+   -rt_extraction_window 600 -extra_rt_extraction_window 100 -min_rsq 0.95 -min_coverage 0.6 -use_ms1_traces \
+   -enable_uis_scoring -Scoring:uis_threshold_peak_area 0 -Scoring:uis_threshold_sn 0 \
+   -Scoring:stop_report_after_feature 5 -tr_irt DIA_iRT.TraML \
+   -tr db_assays_ptms_decoys.TraML -threads 8 -in MSDATA.mzXML.gz -out_tsv MSDATA_RESULTS.tsv
 
 Important is to set the parameters ``-use_ms1_traces`` and ``-enable_uis_scoring`` to extract the additional identification transitions and precursor signals using OpenSWATH.
 
