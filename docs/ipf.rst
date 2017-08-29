@@ -62,7 +62,8 @@ Using SpectraST, the spectral library ``db_consensus.splib`` is converted to a M
 
 .. code-block:: bash
 
-   spectrast -cNdb_assays -cICID-QTOF -cM db_consensus.splib # This will generate the file db_assays.mrm
+   # This will generate the file db_assays.mrm
+   spectrast -cNdb_assays -cICID-QTOF -cM db_consensus.splib
 
    ConvertTSVToTraML -in db_assays.mrm -out db_assays.TraML
 
@@ -71,17 +72,27 @@ Then, a TraML file containing the detection and identification transitions is be
 
 .. code-block:: bash
 
-   OPENMS_DATA_PATH=~/modified_path/share OpenSwathAssayGenerator -in db_assays.TraML -out db_assays_ptms.TraML \
-   -swath_windows_file /IMSB/users/georger/html/oswptm/swath64.txt -allowed_fragment_charges 1,2,3,4 \
-   -enable_ms1_uis_scoring -max_num_alternative_localizations 20 -enable_identification_specific_losses \
+   OPENMS_DATA_PATH=~/modified_path/share \
+   OpenSwathAssayGenerator -in db_assays.TraML \
+   -out db_assays_ptms.TraML \
+   -swath_windows_file swath64.txt \
+   -allowed_fragment_charges 1,2,3,4 \
+   -enable_ms1_uis_scoring \
+   -max_num_alternative_localizations 2000 \
+   -enable_identification_specific_losses \
    -enable_identification_ms2_precursors
 
 We then append decoys to the library:
 
 .. code-block:: bash
 
-   OPENMS_DATA_PATH=~/modified_path/share  OpenSwathDecoyGenerator -in db_assays_ptms.TraML \
-   -out db_assays_ptms_decoys.TraML -method shuffle -append -mz_threshold 0.1 -remove_unannotated
+   OPENMS_DATA_PATH=~/modified_path/share \
+   OpenSwathDecoyGenerator -in db_assays_ptms.TraML \
+   -out db_assays_ptms_decoys.TraML \
+   -method shuffle \
+   -append \
+   -mz_threshold 0.1 \
+   -remove_unannotated
 
 2. Targeted data extraction using OpenSWATH
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,11 +101,23 @@ The next step is conducted using OpenSWATH.
 
 .. code-block:: bash
 
-   OPENMS_DATA_PATH=~/modified_path/share OpenSwathWorkflow -min_upper_edge_dist 1 -mz_extraction_window 0.05 \
-   -rt_extraction_window 600 -extra_rt_extraction_window 100 -min_rsq 0.95 -min_coverage 0.6 -use_ms1_traces \
-   -enable_uis_scoring -Scoring:uis_threshold_peak_area 0 -Scoring:uis_threshold_sn 0 \
-   -Scoring:stop_report_after_feature 5 -tr_irt DIA_iRT.TraML \
-   -tr db_assays_ptms_decoys.TraML -threads 8 -in MSDATA.mzXML.gz -out_tsv MSDATA_RESULTS.tsv
+   OPENMS_DATA_PATH=~/modified_path/share \
+   OpenSwathWorkflow -min_upper_edge_dist 1 \
+   -mz_extraction_window 0.05 \
+   -rt_extraction_window 600 \
+   -extra_rt_extraction_window 100 \
+   -min_rsq 0.95 \
+   -min_coverage 0.6 \
+   -use_ms1_traces \
+   -enable_uis_scoring \
+   -Scoring:uis_threshold_peak_area 0 \
+   -Scoring:uis_threshold_sn 0 \
+   -Scoring:stop_report_after_feature 5 \
+   -tr_irt DIA_iRT.TraML \
+   -tr db_assays_ptms_decoys.TraML \
+   -threads 8 \
+   -in MSDATA.mzXML.gz \
+   -out_tsv MSDATA_RESULTS.tsv
 
 Important is to set the parameters ``-use_ms1_traces`` and ``-enable_uis_scoring`` to extract the additional identification transitions and precursor signals using OpenSWATH.
 
@@ -104,7 +127,17 @@ PyProphet is then applied to the OpenSWATH results:
 
 .. code-block:: bash
 
-   pyprophet --target.overwrite --final_statistics.emp_p --qvality.enable --qvality.generalized --ms1_scoring.enable --uis_scoring.enable --d_score.cutoff=100000 --semi_supervised_learner.num_iter=20 --xeval.num_iter=20 --ignore.invalid_score_columns --uis_scoring.expand_peptidoforms MSDATA_RESULTS.tsv
+   pyprophet --target.overwrite \
+   --final_statistics.emp_p \
+   --qvality.enable \
+   --qvality.generalized \
+   --ms1_scoring.enable \
+   --uis_scoring.enable \
+   --d_score.cutoff=100000 \
+   --semi_supervised_learner.num_iter=20 \
+   --xeval.num_iter=20 \
+   --ignore.invalid_score_columns \
+   --uis_scoring.expand_peptidoforms MSDATA_RESULTS.tsv
 
 It generates reports on several different levels. Important for TRIC are the files that end with ``*_uis_expanded.csv``. IPF attaches several columns, e.g. ``PosteriorFullPeptideName``, which contains the peptidoform sequence of the best scoring peptidoform. The column ``pfqm_score`` represents the peptidoform q-value, whereas ``pf_score`` represent the posterior probability. After running IPF, the ``m_score`` column is equal to ``pfqm_score`` to enable alignment by TRIC.
 
@@ -115,7 +148,20 @@ TRIC can be applied to the IPF results with the following command:
 
 .. code-block:: bash
 
-   feature_alignment.py --in *_uis_expanded.csv --out feature_alignment.csv --out_matrix feature_alignment_matrix.csv --file_format openswath --fdr_cutoff 0.01 --max_fdr_quality 0.2 --mst:useRTCorrection True --mst:Stdev_multiplier 3.0 --method LocalMST --max_rt_diff 30 --alignment_score 0.0001 --frac_selected 0 --realign_method lowess_cython --disable_isotopic_grouping
+   feature_alignment.py --in *_uis_expanded.csv \
+   --out feature_alignment.csv \
+   --out_matrix feature_alignment_matrix.csv \
+   --file_format openswath \
+   --fdr_cutoff 0.01 \
+   --max_fdr_quality 0.2 \
+   --mst:useRTCorrection True \
+   --mst:Stdev_multiplier 3.0 \
+   --method LocalMST \
+   --max_rt_diff 30 \
+   --alignment_score 0.0001 \
+   --frac_selected 0 \
+   --realign_method lowess_cython \
+   --disable_isotopic_grouping
 
 Data
 ----
