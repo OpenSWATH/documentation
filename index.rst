@@ -26,6 +26,7 @@ The tools and workflows are being developed at the `Aebersold Group at IMSB, ETH
    :caption: Targeted data extraction
    
    docs/openswath
+   docs/sqlite
    
 .. toctree::
    :maxdepth: 3
