@@ -13,7 +13,7 @@ Contact and Support
 We provide support separately for the `TPP
 <http://groups.google.com/group/spctools-discuss>`_, the `msproteomicstools
 <https://github.com/msproteomicstools/msproteomicstools/issues>`_ and the `OpenMS
-<http://open-ms.sourceforge.net/support/bugs/>`_ components of the workflow.
+<http://www.openms.de/support/>`_ components of the workflow.
 
 References
 ----------
