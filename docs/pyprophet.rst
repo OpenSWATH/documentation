@@ -42,9 +42,9 @@ To deal with larger data sets and to provide error rate control on the level of 
 
    pip install pyprophet
    pip install pyprophet-cli
-   pip install pyprophet-brutus-driver
+   pip install pyprophet-brutus
 
-PyProphet-cli can be adapted to other workflow managers by development of lightweight modules replacing ``pyprophet-brutus-driver``.
+PyProphet-cli can be adapted to other workflow managers by development of lightweight modules replacing ``pyprophet-brutus``.
 
 Tutorial
 --------
