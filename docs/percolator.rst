@@ -15,7 +15,7 @@ We provide support for ``PercolatorAdapter`` using the `OpenMS support channels
 <http://www.openms.de/support/>`_. Please address general questions to the open-ms-general mailing list.
 
 Please address any general Percolator inquiries to the `Percolator team
-<http://percolator.ms/>`_ .
+<http://percolator.ms/>`_.
 
 Installation
 ------------
@@ -36,13 +36,16 @@ After installation, ``PercolatorAdapter`` can be run on the OSW results using th
 .. code-block:: bash
 
    # Score on MS2-level
-   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw --osw_level ms2
+   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw \
+   --osw_level ms2
 
    # Score on MS1-level
-   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw --osw_level ms1
+   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw \
+   --osw_level ms1
 
    # Score on transition-level
-   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw --osw_level transition
+   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw \
+   --osw_level transition
 
 PyProphet
 ~~~~~~~~~
