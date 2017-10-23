@@ -33,6 +33,7 @@ The tools and workflows are being developed at the `Aebersold Group at IMSB, ETH
    :caption: Statistical validation
    
    docs/pyprophet
+   docs/percolator
    
 .. toctree::
    :maxdepth: 3

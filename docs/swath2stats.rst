@@ -4,7 +4,7 @@ SWATH2stats
 Overview
 --------
 
-`SWATHstats
+`SWATH2stats
 <https://doi.org/doi:10.18129/B9.bioc.SWATH2stats>`_ [1]_ is intended to transform SWATH data from the OpenSWATH software into a format readable by other statistics packages while performing filtering, annotation and FDR estimation.
 
 Contact and Support
