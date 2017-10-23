@@ -4,7 +4,7 @@ Percolator
 Overview
 --------
 
-Percolator [1]_,[2]_ is a popular algorithm for statistical validation of shotgun proteomic data. Using the OpenMS TOPP tool ``PercolatorAdapter``, Percolator can score the results from OpenSWATH and thus be used instead of PyProphet.
+Percolator [1]_, [2]_ is a popular algorithm for statistical validation of shotgun proteomic data. Using the OpenMS TOPP tool ``PercolatorAdapter``, Percolator can score the results from OpenSWATH and thus be used instead of PyProphet.
 
 Contact and Support
 -------------------
@@ -35,14 +35,14 @@ After installation, ``PercolatorAdapter`` can be run on the OSW results using th
 
 .. code-block:: bash
 
-# Score on MS2-level
-PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw --osw_level ms2
+   # Score on MS2-level
+   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw --osw_level ms2
 
-# Score on MS1-level
-PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw --osw_level ms1
+   # Score on MS1-level
+   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw --osw_level ms1
 
-# Score on transition-level
-PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw --osw_level transition
+   # Score on transition-level
+   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw --osw_level transition
 
 PyProphet
 ~~~~~~~~~
@@ -53,7 +53,7 @@ If IPF should be applied after scoring, the following command can be used:
    pyprophet ipf --in=merged.osw
 
 
-Finally, we can export the results to legacy OpenSWATH TSV report:
+Finally, we can export the results to a legacy OpenSWATH TSV report:
 
 .. code-block:: bash
 
