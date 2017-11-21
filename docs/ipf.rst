@@ -68,11 +68,11 @@ Using SpectraST, the spectral library ``db_consensus.splib`` is converted to a M
    ConvertTSVToTraML -in db_assays.mrm -out db_assays.TraML
 
 Then, a TraML file containing the detection and identification transitions is being generated. At this step, the residue modifiability needs to be defined in the `OpenMS resource directory
-<https://github.com/OpenMS/OpenMS/tree/develop/share/OpenMS>`_. For this purpose, the files ``CHEMISTRY/PSI-MOD.obo`` and ``CHEMISTRY/unimod.xml`` can be manually modified. An example for phosphorylation can be obtained from the ProteomeXchange repository. The location of the modified ``OpenMS resource directory`` needs to be supplied by setting ``OPENMS_DATA_PATH`` for ``OpenSwathAssayGenerator``:
+<https://github.com/OpenMS/OpenMS/tree/develop/share/OpenMS>`_. For this purpose, the files ``CHEMISTRY/PSI-MOD.obo`` and ``CHEMISTRY/unimod.xml`` can be manually modified. If the residue modifiability for e.g. phosphorylation should be changed, make sure that both files are modified. An example for phosphorylation can be obtained from the ProteomeXchange repository. The location (IMPORTANT: MUST BE AN ABSOLUTE PATH!) of the modified ``OpenMS resource directory`` needs to be supplied by setting ``OPENMS_DATA_PATH`` for ``OpenSwathAssayGenerator``:
 
 .. code-block:: bash
 
-   OPENMS_DATA_PATH=~/modified_path/share \
+   OPENMS_DATA_PATH=/modified_path/share \
    OpenSwathAssayGenerator -in db_assays.TraML \
    -out db_assays_ptms.TraML \
    -swath_windows_file swath64.txt \
@@ -82,11 +82,13 @@ Then, a TraML file containing the detection and identification transitions is be
    -enable_identification_specific_losses \
    -enable_identification_ms2_precursors
 
+Make sure to double-check this step. If the OPENMS_DATA_PATH is not set correctly, NO error message or warning will appear, but OpenSwathAssayGenerator will fall back to the default settings. To ensure that everything worked correctly, consider running OpenSwathAssayGenerator twice, once with the original residue modifiability files and once with the modified ones. The resulting files need to be different.
+
 We then append decoys to the library:
 
 .. code-block:: bash
 
-   OPENMS_DATA_PATH=~/modified_path/share \
+   OPENMS_DATA_PATH=/modified_path/share \
    OpenSwathDecoyGenerator -in db_assays_ptms.TraML \
    -out db_assays_ptms_decoys.TraML \
    -method shuffle \
@@ -101,7 +103,7 @@ The next step is conducted using OpenSWATH.
 
 .. code-block:: bash
 
-   OPENMS_DATA_PATH=~/modified_path/share \
+   OPENMS_DATA_PATH=/modified_path/share \
    OpenSwathWorkflow -min_upper_edge_dist 1 \
    -mz_extraction_window 0.05 \
    -rt_extraction_window 600 \
