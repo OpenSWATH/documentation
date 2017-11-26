@@ -49,7 +49,7 @@ The general workflow is very similar to the original OpenSWATH workflow with a f
 1. Peptide Query Parameter Generation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Peptide query parameters should be generated identically as described previously, including appended decoys. Optionally, ``OpenSwathAssayGenerator`` can append peptide query parameters for IPF. The final TraML should then be converted to a peptide query parameter (PQP) file und ``TargetedFileConverter`` from OpenMS:
+Peptide query parameters should be generated identically as described previously, including appended decoys. Optionally, ``OpenSwathAssayGenerator`` can append peptide query parameters for IPF. The final TraML should then be converted to a peptide query parameter (PQP) file with ``TargetedFileConverter`` from OpenMS:
 
 .. code-block:: bash
 
