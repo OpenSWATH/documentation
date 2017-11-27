@@ -53,7 +53,7 @@ Peptide query parameters should be generated identically as described previously
 
 .. code-block:: bash
 
-   TargetedFileConvert -in assays_ipf_decoys.TraML -out assays_ipf_decoys.pqp
+   TargetedFileConverter -in assays_ipf_decoys.TraML -out assays_ipf_decoys.pqp
 
 
 2. Targeted data extraction using OpenSWATH
