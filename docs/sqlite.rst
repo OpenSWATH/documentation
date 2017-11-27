@@ -109,7 +109,7 @@ To conduct peptide inference in run-specific, experiment-wide and global context
 .. code-block:: bash
 
    pyprophet peptide --in=merged.osw --context=run-specific \
-   peptide --in=merged.osw --context=run-specific \
+   peptide --in=merged.osw --context=experiment-wide \
    peptide --in=merged.osw --context=global
 
 This will generate individual PDF reports and store the scores in a non-redundant fashion in the OSW file.
@@ -119,7 +119,7 @@ Analogously, this can be conducted on protein-level as well:
 .. code-block:: bash
 
    pyprophet protein --in=merged.osw --context=run-specific \
-   protein --in=merged.osw --context=run-specific \
+   protein --in=merged.osw --context=experiment-wide \
    protein --in=merged.osw --context=global
 
 Finally, we can export the results to legacy OpenSWATH TSV report:
