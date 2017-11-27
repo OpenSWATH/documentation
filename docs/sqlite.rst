@@ -126,7 +126,7 @@ Finally, we can export the results to legacy OpenSWATH TSV report:
 
 .. code-block:: bash
 
-   pyprophet export --in=merged.osw --out=legacy.tsv \
+   pyprophet export --in=merged.osw --out=legacy.tsv
 
 By default, IPF results will be used. This can be disabled by setting ``--no-ipf``.
 
