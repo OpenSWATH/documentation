@@ -68,7 +68,12 @@ Using SpectraST, the spectral library ``db_consensus.splib`` is converted to a M
    ConvertTSVToTraML -in db_assays.mrm -out db_assays.TraML
 
 Then, a TraML file containing the detection and identification transitions is being generated. At this step, the residue modifiability needs to be defined in the `OpenMS resource directory
-<https://github.com/OpenMS/OpenMS/tree/develop/share/OpenMS>`_. For this purpose, the files ``CHEMISTRY/PSI-MOD.obo`` and ``CHEMISTRY/unimod.xml`` can be manually modified. If the residue modifiability for e.g. phosphorylation should be changed, make sure that both files are modified. An example for phosphorylation can be obtained from the ProteomeXchange repository. The location (IMPORTANT: MUST BE AN ABSOLUTE PATH!) of the modified ``OpenMS resource directory`` needs to be supplied by setting ``OPENMS_DATA_PATH`` for ``OpenSwathAssayGenerator``:
+<https://github.com/OpenMS/OpenMS/tree/develop/share/OpenMS>`_. 
+
+.. danger::
+   To specificy the residue modifiability, the files ``CHEMISTRY/PSI-MOD.obo`` and ``CHEMISTRY/unimod.xml`` in the OpenMS resource directory can be manually modified. This is a common source of problems downstream in the analysis, because the tools will not complain if the folder was not found or the files are incorrect, but will rather will use the default files.
+   
+   If the residue modifiability for e.g. phosphorylation should be changed, make sure that both files are modified. An example for phosphorylation can be obtained from the ProteomeXchange repository. The location (IMPORTANT: MUST BE AN ABSOLUTE PATH!) of the modified ``OpenMS resource directory`` needs to be supplied by setting ``OPENMS_DATA_PATH`` for ``OpenSwathAssayGenerator``.
 
 .. code-block:: bash
 
