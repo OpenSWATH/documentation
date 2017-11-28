@@ -11,8 +11,8 @@ PQP files represent the data stored in TraML files. OSW files copy the exact dat
 
 Contact and Support
 -------------------
-
-The new data formats are currently in development and must NOT be used in production environments. We would however be very grateful for testing of the new workflows and reporting of problems and bugs.
+.. danger::
+   The new data formats are currently in development and must NOT be used in production environments. We would however be very grateful for testing of the new workflows and reporting of problems and bugs.
 
 You can contact the author `George Rosenberger
 <http://www.rosenberger.pro>`_.
