@@ -42,12 +42,13 @@ Four native interfaces exist to use OpenSWATH:
 
 Integrated Executable
 ~~~~~~~~~~~~~~~~~~~~~
-Since OpenMS 2.0, the executable ``OpenSwathWorkflow`` provides a fast and
-efficient analysis. Most users will want to directly use this workflow.
+Since OpenMS 2.0, the executable `OpenSwathWorkflow <openswath_workflow.html>`_
+provides fast and efficient analysis. Most users will want to directly use this
+workflow.
 
 An extended tutorial describing a complete OpenSWATH analysis workflow using
 ``OpenSwathWorkflow`` was recently published [4]_ and is also available from
-`bioRxiv <http://biorxiv.org/content/early/2016/03/19/044552>`_.
+`bioRxiv <http://biorxiv.org/content/early/2016/03/19/044552>`_. 
 
 Classic TOPP Workflow
 ~~~~~~~~~~~~~~~~~~~~~
@@ -127,3 +128,4 @@ References
 .. [5] Kohlbacher O, Reinert K, Gröpl C, Lange E, Pfeifer N, Schulz-Trieglaff O, Sturm M. TOPP--the OpenMS proteomics pipeline. Bioinformatics. 2007 Jan 15;23(2):e191-7. PMID: 17237091
 
 .. [6] Röst HL, Schmitt U, Aebersold R, Malmström L. pyOpenMS: a Python-based interface to the OpenMS mass-spectrometry algorithm library. Proteomics. 2014 Jan;14(1):74-7. doi: 10.1002/pmic.201300246. PMID: 24420968
+
