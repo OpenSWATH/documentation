@@ -25,10 +25,7 @@ To use the new data formats, please use the following versions of our tools:
 OpenMS
 ~~~~~~~~~~
 
-Full support for PQP and OSW files is provided in ``OpenMS/develop``, with limited support available since OpenMS 2.2. Please follow the instructions in the :doc:`openswath` tutorial to install OpenMS.
-
-.. warning::
-   ``OpenMS/develop`` currently contains a bug in TargetedFileConverter that results in wrong protein identifiers. The problem was fixed in ``OpenMS/master``, which will become OpenMS Release 2.3 very soon. Please use ``OpenMS/master`` for the moment.
+Full support for PQP and OSW files is provided in ``OpenMS/develop`` since revision ``5e81a69`` (2017-11-30). Please follow the instructions in the :doc:`openswath` tutorial to install OpenMS.
    
 PyProphet
 ~~~~~~~~~~
