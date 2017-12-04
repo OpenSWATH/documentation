@@ -72,7 +72,7 @@ The next step is conducted using OpenSWATH.
 The workflow is executed identically as before, with the only change being that the PQP file is used ``-tr assays_ipf_decoys.pqp`` and an OSW file is exported ``-out_osw MSDATA_RESULTS.osw``.
 
 .. warning::
-   If you execute ``OpenSwathWorkflow`` with the flag ``-enable_uis_scoring``, OpenSWATH will store identification instead of detection transition quantities.
+   If you execute ``OpenSwathWorkflow`` with the flag ``-enable_uis_scoring``, OpenSWATH will store identification instead of detection transition quantities. If IPF should NOT be applied, this will introduce some limitations for TRIC or other downstream applications. It is thus currently recommended to only use ``-enable_uis_scoring`` if IPF scoring is required.
 
 3. Statistical validation using PyProphet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
