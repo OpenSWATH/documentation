@@ -68,8 +68,11 @@ The next step is conducted using OpenSWATH.
    -tr assays_ipf_decoys.pqp \
    -out_osw MSDATA_RESULTS.osw
    [OTHER PARAMETERS]
-
+   
 The workflow is executed identically as before, with the only change being that the PQP file is used ``-tr assays_ipf_decoys.pqp`` and an OSW file is exported ``-out_osw MSDATA_RESULTS.osw``.
+
+.. warning::
+   If you execute ``OpenSwathWorkflow`` with the flag ``-enable_uis_scoring``, OpenSWATH will store identification instead of detection transition quantities.
 
 3. Statistical validation using PyProphet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -86,7 +89,9 @@ This command will merge and optionally subsample multiple files. If a set of run
 
    pyprophet score --in=merged.osw --level=ms2
 
-The main command will conduct semi-supervised learning and error-rate estimation in a fully automated fashion. ``--help`` will show the full selection of parameters to adjust the process. The default parameters are recommended for SCIEX TripleTOF 5600/6600 instrument data, but can be adjusted in other scenarios. The parameter ``--level`` can be set to ``ms2``, ``ms1`` or ``transition``. If MS1 or transition-level data should be scored, the command is executed three times, e.g.:
+The main command will conduct semi-supervised learning and error-rate estimation in a fully automated fashion. ``--help`` will show the full selection of parameters to adjust the process. The default parameters are recommended for SCIEX TripleTOF 5600/6600 instrument data, but can be adjusted in other scenarios. 
+
+When using the IPF extension, the parameter ``--level`` can be set to ``ms2``, ``ms1`` or ``transition``. If MS1 or transition-level data should be scored, the command is executed three times, e.g.:
 
 .. code-block:: bash
 
@@ -128,10 +133,10 @@ Finally, we can export the results to legacy OpenSWATH TSV report:
 
    pyprophet export --in=merged.osw --out=legacy.tsv
 
-By default, IPF results will be used. This can be disabled by setting ``--no-ipf``.
+By default, both peptide- and transition-level quantification is reported, which is necessary for requantification or ``SWATH2stats``. If peptide and protein inference in the global context was conducted, the results will be filtered to 1% FDR by default. Further details can be found by ``pyprophet export --help``.
 
 .. warning::
-   The IPF results require different properties for TRIC. Please ensure that you want to analyze the results in the context of IPF, else, use the ``--no-ipf`` settings.
+   By default, IPF results will be used if available. This can be disabled by setting ``--no-ipf``. The IPF results require different properties for TRIC. Please ensure that you want to analyze the results in the context of IPF, else, use the ``--no-ipf`` settings.
 
 References
 ----------
