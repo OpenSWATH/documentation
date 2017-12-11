@@ -42,29 +42,7 @@ The input file ``in`` is generally a single ``mzML``, ``mzXML`` or ``sqMass`` fi
 <http://proteowizard.sourceforge.net/>`_).
 
 The spectral library ``tr`` is a spectral library either in ``.tsv`` or
-``.TraML`` format (where the tsv format is recommended). A sample file for a
-proteomics application can be found `here
-<https://github.com/OpenMS/OpenMS/blob/develop/src/tests/topp/ConvertTSVToTraML_2_input.tsv>`_
-and a sample file for a metabolomics application can be found `here
-<https://github.com/OpenMS/OpenMS/blob/develop/src/tests/topp/ConvertTSVToTraML_5_input.tsv>`_.
-The tab-delimited input format has one transition (precursor -> fragment ion
-pair) and needs to have at least the following columns:
-
- - ``PrecursorMz`` (float)
- - ``ProductMz`` (float) 
- - ``Tr_recalibrated`` (float) (normalized retention time)
- - ``transition_name``  (free text, needs to be unique for each transition [in this file]) 
- - ``LibraryIntensity`` (float)
- - ``transition_group_id`` (free text, groups transition to common entity [e.g. compound/peptide])
- - ``decoy`` (1==decoy, 0==no decoy)
- - ``PeptideSequence`` * (free text, sequence only (no modifications) ) [proteomics only]
- - ``ProteinName`` * (free text) [proteomics only]
- - ``CompoundName`` ** (free text) [metabolomics only]
- - ``SumFormula`` ** (free text) [metabolomics only]
- - ``SMILES`` ** (free text) [metabolomics only]
-
-Where columns indicated with asterisks are for proteomics (*) or metabolomics
-(**) applications only. All other columns in the sample files are optional.
+``.TraML`` format (where the tsv format is recommended). The format is described in the :doc:`generic` section.
 
 The retention time normalization peptides are provided using the optional
 parameter ``tr_irt`` in TraML format. We suggest to use the ``iRTassays.TraML`` file provided in

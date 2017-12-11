@@ -28,6 +28,7 @@ The following columns are required:
 - ``NormalizedRetentionTime`` * (float; synonyms: RetentionTime, Tr_recalibrated, iRT, RetentionTimeCalculatorScore) (normalized retention time)
 
 For targeted proteomics, the following additional columns should be provided:
+
 - ``ProteinId`` ** (free text; synonyms: ProteinName)
 - ``PeptideSequence`` ** (free text, sequence only (no modifications); synonyms: Sequence, StrippedSequence)
 - ``ModifiedPeptideSequence`` ** (free text, should contain modifications; synonyms: FullUniModPeptideName, FullPeptideName, ModifiedSequence) 
