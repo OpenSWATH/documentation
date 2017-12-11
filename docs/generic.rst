@@ -20,12 +20,18 @@ Format
 
 The input to ``TargetedFileConverter`` can come either directly from :doc:`tpp` or :doc:`skyline` or the generic transition list format. The columns should be separated either by comma or tab and the files should be saved with Windows or Unix line endings.
 
+Required Columns
+~~~~~~~~~~~~~~~~
+
 The following columns are required:
 
 - ``PrecursorMz`` * (float)
 - ``ProductMz`` * (float; synonyms: FragmentMz)
 - ``LibraryIntensity`` * (float; synonyms: RelativeFragmentIntensity)
 - ``NormalizedRetentionTime`` * (float; synonyms: RetentionTime, Tr_recalibrated, iRT, RetentionTimeCalculatorScore) (normalized retention time)
+
+Targeted Proteomics Columns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For targeted proteomics, the following additional columns should be provided:
 
@@ -40,6 +46,18 @@ For targeted proteomics, the following additional columns should be provided:
 .. warning::
    ``ModifiedPeptideSequence`` should contain modifications in UniMod (preferred) (``.(UniMod:1)PEPC(UniMod:4)PEPM(UniMod:35)PEPR.(UniMod:2)``) or TPP (``n[43]PEPC[160]PEPM[147]PEPRc[16]``) formats. N- and C-terminal modifications are indicated after a pre- or suffix ``.``.
 
+Targeted Metabolomics Columns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For targeted metabolomics, the following fields are also supported:
+
+- ``CompoundName`` ** (synonyms: CompoundId)
+- ``SMILES``
+- ``SumFormula``
+
+Grouping Columns
+~~~~~~~~~~~~~~~~
+
 OpenSWATH uses grouped transitions to detect candidate analyte signals. These groups are by default generated based on the input, but can also be manually specified:
 
 - ``TransitionGroupId`` (free text, designates the transition group [e.g. peptide] to which this transition belongs; synomys: TransitionGroupName, transition_group_id)
@@ -53,18 +71,15 @@ OpenSWATH uses grouped transitions to detect candidate analyte signals. These gr
 .. warning::
    If you are unsure about these columns, ``TargetedFileConverter`` and the downstream tools ``OpenSwathAssayGenerator`` and ``OpenSwathDecoyGenerator`` will generate them automatically for you.
 
+Optional Columns
+~~~~~~~~~~~~~~~~
+
 Optionally, the following columns can be specified but they are not actively used by OpenSWATH:
 
 - ``CollisionEnergy`` (float; synonyms: CE)
 - ``Annotation`` (free text, e.g. y7)
 - ``UniprotId`` (free text; synonyms: UniprotID)
 - ``LabelType`` (free text, optional description of which label was used, e.g. heavy or light)
-
-For targeted metabolomics, the following fields are also supported:
-
-- ``CompoundName`` ** (synonyms: CompoundId)
-- ``SMILES``
-- ``SumFormula``
 
 Fields indicated with * are strictly required while fields indicated with ** are only required in the specific context (proteomics or metabolomics).
 
