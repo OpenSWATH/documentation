@@ -20,7 +20,7 @@ Tutorial
 --------
 
 The Skyline team provides extensive documentation and `tutorials
-<https://skyline.ms/project/home/software/Skyline/begin.view>`_ and their website. Please follow their instructions to generate spectral or chromatogram libraries. To export a library for use in OpenSWATH, select ``File`` and then ``Report``. You can then import the `report definition file
+<https://skyline.ms/project/home/software/Skyline/begin.view>`_ and their website. Please follow their instructions to generate spectral or chromatogram libraries. To export a library for use in OpenSWATH, select ``File`` and then ``Report``. You can then import the ``OpenSWATH.skyr`` `report definition file
 <https://github.com/OpenMS/OpenMS/blob/develop/tools/OpenSWATH.skyr>`_, which will directly export all necessary columns.
 
 Convert the Skyline transition list to a TraML spectral library and follow the remaining steps in the :doc:`generic` section.

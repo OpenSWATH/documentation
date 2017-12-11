@@ -60,7 +60,7 @@ Optionally, the following columns can be specified but they are not actively use
 - ``UniprotId`` (free text; synonyms: UniprotID)
 - ``LabelType`` (free text, optional description of which label was used, e.g. heavy or light)
 
-  For targeted metabolomics, the following fields are also supported:
+For targeted metabolomics, the following fields are also supported:
 
 - ``CompoundName`` ** (synonyms: CompoundId)
 - ``SMILES``
