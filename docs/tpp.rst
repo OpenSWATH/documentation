@@ -29,12 +29,7 @@ In the last step, import the SpectraST consensus library (format ``sptxt`` or ``
    # This will generate the file db_assays.mrm
    spectrast -cNdb_pqp -cICID-QTOF -cM db_consensus.splib
 
-Convert then the ``MRM`` transition list to a TraML spectral library and follow the remaining steps in the :doc:`generic` section:
-
-.. code-block:: bash
-
-	# TargetedFileConverter from OpenMS/develop
-   TargetedFileConverter -in db_pqp.mrm -out db_pqp.TraML
+Convert then the ``MRM`` transition list to a TraML spectral library and follow the remaining steps in the :doc:`generic` section.
 
 References
 ----------

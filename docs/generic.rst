@@ -22,24 +22,25 @@ The input to ``TargetedFileConverter`` can come either directly from :doc:`tpp` 
 
 The following columns are required:
 
-- ``PrecursorMz``* (float)
-- ``ProductMz``* (float; synonyms: FragmentMz)
-- ``LibraryIntensity``* (float; synonyms: RelativeFragmentIntensity)
-- ``NormalizedRetentionTime``* (float; synonyms: RetentionTime, Tr_recalibrated, iRT, RetentionTimeCalculatorScore) (normalized retention time)
+- ``PrecursorMz`` * (float)
+- ``ProductMz`` * (float; synonyms: FragmentMz)
+- ``LibraryIntensity`` * (float; synonyms: RelativeFragmentIntensity)
+- ``NormalizedRetentionTime`` * (float; synonyms: RetentionTime, Tr_recalibrated, iRT, RetentionTimeCalculatorScore) (normalized retention time)
 
 For targeted proteomics, the following additional columns should be provided:
-- ``ProteinId``** (free text; synonyms: ProteinName)
-- ``PeptideSequence``** (free text, sequence only (no modifications); synonyms: Sequence, StrippedSequence)
-- ``ModifiedPeptideSequence``** (free text, should contain modifications; synonyms: FullUniModPeptideName, FullPeptideName, ModifiedSequence) 
-- ``PrecursorCharge``** (integer, contains the charge of the precursorl synonyms: Charge)
-- ``ProductCharge``** (integer, contains the fragment charge; synonyms: FragmentCharge)
+- ``ProteinId`` ** (free text; synonyms: ProteinName)
+- ``PeptideSequence`` ** (free text, sequence only (no modifications); synonyms: Sequence, StrippedSequence)
+- ``ModifiedPeptideSequence`` ** (free text, should contain modifications; synonyms: FullUniModPeptideName, FullPeptideName, ModifiedSequence) 
+- ``PrecursorCharge`` ** (integer, contains the charge of the precursorl synonyms: Charge)
+- ``ProductCharge`` ** (integer, contains the fragment charge; synonyms: FragmentCharge)
 - ``FragmentType`` (free text, contains the type of the fragment, e.g. "b" or "y")
 - ``FragmentSeriesNumber`` (integer, e.g. for y7 use "7" here; synonyms: FragmentNumber)
 
-.. danger::
+.. warning::
    ``ModifiedPeptideSequence`` should contain modifications in UniMod (preferred) (``.(UniMod:1)PEPC(UniMod:4)PEPM(UniMod:35)PEPR.(UniMod:2)``) or TPP (``n[43]PEPC[160]PEPM[147]PEPRc[16]``) formats. N- and C-terminal modifications are indicated after a pre- or suffix ``.``.
 
 OpenSWATH uses grouped transitions to detect candidate analyte signals. These groups are by default generated based on the input, but can also be manually specified:
+
 - ``TransitionGroupId`` (free text, designates the transition group [e.g. peptide] to which this transition belongs; synomys: TransitionGroupName, transition_group_id)
 - ``TransitionId`` (free text, needs to be unique for each transition [in this file]; synonyms: TransitionName, transition_name)
 - ``Decoy`` (1: decoy, 0: target, i.e. no decoy; determines whether the transition is a decoy transition or not, synomys: decoy, isDecoy)
@@ -48,17 +49,19 @@ OpenSWATH uses grouped transitions to detect candidate analyte signals. These gr
 - ``IdentifyingTransition`` (1: use transition for peptidoform inference using IPF, 0: don't use transition for identification; synonyms: identifying_transition)
 - ``QuantifyingTransition`` (1: use transition to quantify peak group, 0: don't use transition for quantification; synonyms: quantifying_transition)
 
-.. danger::
+.. warning::
    If you are unsure about these columns, ``TargetedFileConverter`` and the downstream tools ``OpenSwathAssayGenerator`` and ``OpenSwathDecoyGenerator`` will generate them automatically for you.
 
 Optionally, the following columns can be specified but they are not actively used by OpenSWATH:
+
 - ``CollisionEnergy`` (float; synonyms: CE)
 - ``Annotation`` (free text, e.g. y7)
 - ``UniprotId`` (free text; synonyms: UniprotID)
 - ``LabelType`` (free text, optional description of which label was used, e.g. heavy or light)
 
   For targeted metabolomics, the following fields are also supported:
-- ``CompoundName``** (synonyms: CompoundId)
+
+- ``CompoundName`` ** (synonyms: CompoundId)
 - ``SMILES``
 - ``SumFormula``
 
