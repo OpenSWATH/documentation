@@ -18,7 +18,9 @@ The tools and workflows are being developed at the `Aebersold Group at IMSB, ETH
    :maxdepth: 3
    :caption: Spectral library generation
    
+   docs/generic
    docs/tpp
+   docs/skyline
    docs/swathatlas
 
 .. toctree::
