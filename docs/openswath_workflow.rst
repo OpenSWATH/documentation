@@ -48,7 +48,7 @@ the tutorial dataset, if the Biognosys iRT-kit was used during sample preparatio
 The SWATH windows themselves can either be read from the input files, but it is
 recommended to provide them explicitly in tab-delimited form.  We suggest to
 use the ``SWATHwindows_analysis.tsv`` file provided in the tutorial dataset
-[5]_ for 32 windows of 25 Da each (note that the analysis windows should not
+for 32 windows of 25 Da each (note that the analysis windows should not
 have any overlap).
 
 
