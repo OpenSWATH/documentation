@@ -34,26 +34,46 @@ The input to OpenSwathWorkflow are provided using the following files:
 - ``tr_irt`` an optional transition file containing RT normalization coordinates
 - ``swath_windows_file`` an optional file specifying the *analysis* SWATH windows
 
+Mass spectrometric data
+~~~~~~~~~~~~~~~~~~~~~~~
+
 The input file ``in`` is generally a single ``mzML``, ``mzXML`` or ``sqMass`` file
 (converted from a raw vendor file format using `ProteoWizard
 <http://proteowizard.sourceforge.net/>`_).
 
+Spectral library
+~~~~~~~~~~~~~~~~
+
 The spectral library ``tr`` is a spectral library either in ``.tsv``,
 ``.TraML`` or ``.PQP`` format (where the ``TSV`` or ``PQP`` format is recommended). Further information in generating these files can be found in the :doc:`generic` section.
+
+Retention time normalization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The retention time normalization peptides are provided using the optional
 parameter ``tr_irt`` in TraML format. We suggest to use the ``iRTassays.TraML`` file provided in
 the tutorial dataset, if the Biognosys iRT-kit was used during sample preparation. If the iRT-kit was not used, it is highly recommended to use or generate a set of endogenous peptides for RT normalization. A recent publication [5]_ provides such a set of ``CiRT`` peptides suitable for many eukaryotic samples.
 
+SWATH windows definition
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 The SWATH windows themselves can either be read from the input files, but it is
-recommended to provide them explicitly in tab-delimited form.  We suggest to
-use the ``SWATHwindows_analysis.tsv`` file provided in the tutorial dataset
-for 32 windows of 25 Da each (note that the analysis windows should not
-have any overlap).
+recommended to provide them explicitly in tab-delimited form. Note that there is
+a difference between the `SWATH window acquisition scheme settings <ftp://PASS00779:SWATH@ftp.peptideatlas.org/SWATHwindows_acquisition.tsv>`_
+and the `SWATH window analysis settings <ftp://PASS00779:SWATH@ftp.peptideatlas.org/SWATHwindows_analysis.tsv>`_:
+
+The *acquisition* settings tell the instrument how to acquire the data and how to filter the transitions (see section :doc:`pqp`).
+
+The *analysis* settings on the other hand specify from which precursor isolation windows to extract the data. Note that the analysis windows should not have any overlap.
+
+We suggest to use the ``SWATHwindows_analysis.tsv`` file provided in the tutorial dataset for 32 windows of 25 Da each.
 
 
 Parameters
 ----------
+
+Caching of mass spectrometric data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Due to the large size of the files, OpenSwathWorkflow implements a caching
 strategy where files are cached to disk and then read into memory
@@ -64,13 +84,20 @@ temporary directory depending on your platform.
 Other potentially useful options you may want to turn on are ``batchSize`` and
 ``sort_swath_maps``. 
 
+Chromatographic parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The current parameters are optimized for 2 hour gradients on SCIEX 5600 /
 6600 TripleTOF instruments with a peak width of around 30 seconds using iRT
 peptides.  If your chromatography differs, please consider adjusting
 ``-Scoring:TransitionGroupPicker:min_peak_width`` to allow for smaller or larger
 peaks and adjust the ``-rt_extraction_window`` to use a different extraction
-window for the retention time. In *m/z* domain, consider adjusting
-``-mz_extraction_window`` to your instrument resolution, which can be in Th or
+window for the retention time. 
+
+Mass spectrometric parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In *m/z* domain, consider adjusting ``-mz_extraction_window`` to your instrument resolution, which can be in Th or
 ppm (using ``-ppm``). In addition to using the iRT peptides for correction of
 the retention time space, OpenSWATH can also use those peptides to correct the *m/z* space
 with the option ``-mz_correction_function quadratic_regression_delta_ppm``. For
@@ -78,7 +105,13 @@ quantification, it can be beneficial to enable background subtraction using
 ``-TransitionGroupPicker:background_subtraction original`` as described in the
 software comparison paper [6]_.
 
+MS1 and IPF parameters
+~~~~~~~~~~~~~~~~~~~~~~
+
 Furthermore, if you wish to use MS1 information, use the ``-use_ms1_traces`` flag, assuming that your input data contains an MS1 map in addition to the SWATH data. This is generally recommended. If you would like to enable IPF transition-level scoring and your spectral library was generated according to the IPF instructions, you should set the ``-enable_uis_scoring`` flag.
+
+Example
+~~~~~~~
 
 Therefore, a full run of OpenSWATH may look like this:
 
@@ -96,6 +129,9 @@ Therefore, a full run of OpenSWATH may look like this:
     -TransitionGroupPicker:background_subtraction original
     -RTNormalization:alignmentMethod linear
     -out_tsv osw_output.tsv
+
+Troubleshooting
+~~~~~~~~~~~~~~~
 
 If you encounter issues with peak picking, try to disable peak filtering by
 setting ``-Scoring:TransitionGroupPicker:compute_peak_quality false`` which will
