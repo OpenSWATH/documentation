@@ -4,6 +4,14 @@ The OpenSWATH Workflow enables targeted data analysis of data-independent acquis
 
 .. image:: img/OpenSWATH_Workflow.svg
 
+News
+----
+
+.. note::
+
+   *2017-12-28:* The tools of the OpenSWATH Workflow now provide *experimental* support for new SQLite-based file formats.
+
+
 Acknowledgments
 ---------------
 The tools and workflows are being developed at the `Aebersold Group at IMSB, ETH Zurich
