@@ -1,8 +1,8 @@
 Peptide Query Parameter Generation
-----------------------------------
+==================================
 
 PQP Generation for OpenSWATH
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 After importing transitions lists from an upstream workflow (e.g. :doc:`tpp`, :doc:`skyline` or :doc:`generic`), the transitions can then be optimized using a set of heuristic rules [1]_:
 
@@ -41,7 +41,7 @@ If necessary, the rules for transition selection can be modified with the follow
    -product_upper_mz_limit 2000 \
 
 PQP Generation for IPF
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 If IPF scoring [2]_ should be conducted, the following parameters should be considered:
 
@@ -75,7 +75,7 @@ By default, unfragmented precursors are extracted from the SWATH maps and used f
 In scenarios with extremely small precursor isolation windows (e.g. < 1 Th), ``-enable_swath_specificity`` can be used to skip the precursor inference step of IPF. This is not recommended in general.
 
 Decoy Generation
-~~~~~~~~~~~~~~~~
+----------------
 
 Decoys can then be appended using ``OpenSwathDecoyGenerator``:
 

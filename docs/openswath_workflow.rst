@@ -25,7 +25,7 @@ It executes the following steps in order:
  - Reporting the peak groups and the chromatograms
 
 Input
-~~~~~
+-----
 
 The input to OpenSwathWorkflow are provided using the following files:
 
@@ -53,7 +53,7 @@ have any overlap).
 
 
 Parameters
-~~~~~~~~~~
+----------
 
 Due to the large size of the files, OpenSwathWorkflow implements a caching
 strategy where files are cached to disk and then read into memory
@@ -107,7 +107,7 @@ to noise threshold will make the peaks wider or smaller.
 
 
 Output
-~~~~~~
+------
 
 The OpenSwathWorkflow produces two types of output: 
 
