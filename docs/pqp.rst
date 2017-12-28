@@ -43,7 +43,7 @@ If necessary, the rules for transition selection can be modified with the follow
 PQP Generation for IPF
 ----------------------------
 
-If IPF scoring [2]_ should be conducted, the following parameters should be considered:
+If IPF scoring [2]_ should be conducted, the following parameters should be considered in addition to the others above:
 
 .. code-block:: bash
 

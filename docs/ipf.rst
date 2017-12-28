@@ -18,135 +18,29 @@ You can contact the author `George Rosenberger
 Installation
 ------------
 
-IPF requires the installation of several tools:
-
-OpenMS
-~~~~~~~~~~
-
-IPF is available since OpenMS 2.1. Please follow the instructions in the :doc:`openswath` tutorial to install OpenMS.
-
-Percolator
-~~~~~~~~~~
-
-IPF presently requires QVALITY [6]_ to be installed, which is part of `Percolator
-<http://www.percolator.ms>`_. Please install and export the binaries according to the Percolator instructions.
-
-PyProphet
-~~~~~~~~~~
-
-IPF requires a specific branch of PyProphet. If Python and PIP are configured correctly, the following command can be used to install the latest version:
-
-.. code-block:: bash
-
-   pip install git+https://github.com/grosenberger/pyprophet.git@feature/ipf
-
-To work properly, PyProphet needs to find the ``qvality`` executable in the main path.
-
-TRIC
-~~~~
-
-TRIC should be installed according to the :doc:`tric` installation instructions.
-
+IPF is fully integrated within the tools of the OpenSWATH workflow. Please follow the :doc:`openswath`, :doc:`pyprophet` and :doc:`tric` installation instructions for the latest development branches. The current instructions are written for the new SQLite-based workflow. You can alternatively follow the instructions for the :doc:`ipf_legacy`.
 
 Tutorial
 --------
 
-Running IPF requires following several steps:
+Running IPF requires to modify the parameters of several steps of tools part of the OpenSWATH workflow:
 
 1. Peptide Query Parameter Generation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-IPF requries a spectral library generated from DDA (or DIA pseudo spectra, e.g. from DIA-Umpire [7]_) data. The protocol is described in more detail in the :doc:`tpp` tutorial.
+IPF requries a spectral library generated from DDA (or DIA pseudo spectra, e.g. from DIA-Umpire [7]_) data. The input can come for example from :doc:`tpp`, :doc:`skyline` or can be provided in the form of :doc:`generic`. The underlying PSMs do not need to be site-localized, as IPF will assess site-localization independently. However, a site-localized spectral library might provide better peptide query parameters.
 
-Using SpectraST, the spectral library ``db_consensus.splib`` is converted to a MRM and then to a TraML file:
+The first step uses ``OpenSwathAssayGenerator`` to append *in silico* ``identification transitions`` to the spectral library. The required parameters (including residue modifiability) and considerations are described in the section :doc:`pqp`. The spectral library should also be appended with decoys and converted to a ``PQP`` file.
 
-.. code-block:: bash
-
-   # This will generate the file db_assays.mrm
-   spectrast -cNdb_assays -cICID-QTOF -cM db_consensus.splib
-
-   ConvertTSVToTraML -in db_assays.mrm -out db_assays.TraML
-
-Then, a TraML file containing the detection and identification transitions is being generated. At this step, the residue modifiability needs to be defined in the `OpenMS resource directory
-<https://github.com/OpenMS/OpenMS/tree/develop/share/OpenMS>`_. 
-
-.. danger::
-   To specificy the residue modifiability, the files ``CHEMISTRY/PSI-MOD.obo`` and ``CHEMISTRY/unimod.xml`` in the OpenMS resource directory can be manually modified. This is a common source of problems downstream in the analysis, because the tools will not complain if the folder was not found or the files are incorrect, but will rather will use the default files.
-   
-   If the residue modifiability for e.g. phosphorylation should be changed, make sure that both files are modified. An example for phosphorylation can be obtained from the ProteomeXchange repository. The location (IMPORTANT: MUST BE AN ABSOLUTE PATH!) of the modified ``OpenMS resource directory`` needs to be supplied by setting ``OPENMS_DATA_PATH`` for ``OpenSwathAssayGenerator``.
-
-.. code-block:: bash
-
-   OPENMS_DATA_PATH=/modified_path/share \
-   OpenSwathAssayGenerator -in db_assays.TraML \
-   -out db_assays_ptms.TraML \
-   -swath_windows_file swath64.txt \
-   -allowed_fragment_charges 1,2,3,4 \
-   -enable_ms1_uis_scoring \
-   -max_num_alternative_localizations 2000 \
-   -enable_identification_specific_losses \
-   -enable_identification_ms2_precursors
-
-Make sure to double-check this step. If the OPENMS_DATA_PATH is not set correctly, NO error message or warning will appear, but OpenSwathAssayGenerator will fall back to the default settings. To ensure that everything worked correctly, consider running OpenSwathAssayGenerator twice, once with the original residue modifiability files and once with the modified ones. The resulting files need to be different.
-
-We then append decoys to the library:
-
-.. code-block:: bash
-
-   OPENMS_DATA_PATH=/modified_path/share \
-   OpenSwathDecoyGenerator -in db_assays_ptms.TraML \
-   -out db_assays_ptms_decoys.TraML \
-   -method shuffle \
-   -append \
-   -mz_threshold 0.1 \
-   -remove_unannotated
 
 2. Targeted data extraction using OpenSWATH
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The next step is conducted using OpenSWATH. 
-
-.. code-block:: bash
-
-   OPENMS_DATA_PATH=/modified_path/share \
-   OpenSwathWorkflow -min_upper_edge_dist 1 \
-   -mz_extraction_window 0.05 \
-   -rt_extraction_window 600 \
-   -extra_rt_extraction_window 100 \
-   -min_rsq 0.95 \
-   -min_coverage 0.6 \
-   -use_ms1_traces \
-   -enable_uis_scoring \
-   -Scoring:uis_threshold_peak_area 0 \
-   -Scoring:uis_threshold_sn 0 \
-   -Scoring:stop_report_after_feature 5 \
-   -tr_irt DIA_iRT.TraML \
-   -tr db_assays_ptms_decoys.TraML \
-   -threads 8 \
-   -in MSDATA.mzXML.gz \
-   -out_tsv MSDATA_RESULTS.tsv
-
-Important is to set the parameters ``-use_ms1_traces`` and ``-enable_uis_scoring`` to extract the additional identification transitions and precursor signals using OpenSWATH.
+The next step is conducted using OpenSWATH. Follow the IPF-specific instructions in the section :doc:`openswath_workflow`. Important is to enable MS1 and transition-level scoring by setting the parameters ``-use_ms1_traces`` and ``-enable_uis_scoring`` for ``OpenSwathWorkflow``. Make sure to use the ``PQP`` spectral library as input and write an ``OSW`` file as output.
 
 3. Statistical validation using PyProphet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-PyProphet is then applied to the OpenSWATH results:
-
-.. code-block:: bash
-
-   pyprophet --target.overwrite \
-   --final_statistics.emp_p \
-   --qvality.enable \
-   --qvality.generalized \
-   --ms1_scoring.enable \
-   --uis_scoring.enable \
-   --d_score.cutoff=100000 \
-   --semi_supervised_learner.num_iter=20 \
-   --xeval.num_iter=20 \
-   --ignore.invalid_score_columns \
-   --uis_scoring.expand_peptidoforms MSDATA_RESULTS.tsv
-
-It generates reports on several different levels. Important for TRIC are the files that end with ``*_uis_expanded.csv``. IPF attaches several columns, e.g. ``PosteriorFullPeptideName``, which contains the peptidoform sequence of the best scoring peptidoform. The column ``pfqm_score`` represents the peptidoform q-value, whereas ``pf_score`` represent the posterior probability. After running IPF, the ``m_score`` column is equal to ``pfqm_score`` to enable alignment by TRIC.
+PyProphet is then applied to the OpenSWATH results. Follow the IPF-specific instructions in the :doc:`sqlite` PyProphet section. Export a legacy TSV report for analysis with TRIC.
 
 4. Multi-run alignment using TRIC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,6 +63,8 @@ TRIC can be applied to the IPF results with the following command:
    --frac_selected 0 \
    --realign_method lowess_cython \
    --disable_isotopic_grouping
+
+Note that IPF does not report decoys, which is the reason why ``max_fdr_quality`` must be set.
 
 Data
 ----

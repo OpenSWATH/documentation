@@ -78,7 +78,7 @@ quantification, it can be beneficial to enable background subtraction using
 ``-TransitionGroupPicker:background_subtraction original`` as described in the
 software comparison paper [6]_.
 
-Furthermore, if you wish to use MS1 information, use the ``-use_ms1_traces`` flag, assuming that your input data contains an MS1 map in addition to the SWATH data. This is generally recommended. If you would like to enable IPF transition-level scoring and your spectral library was generated according to the IPF instructions, you should set the ``--enable_uis_scoring`` flag.
+Furthermore, if you wish to use MS1 information, use the ``-use_ms1_traces`` flag, assuming that your input data contains an MS1 map in addition to the SWATH data. This is generally recommended. If you would like to enable IPF transition-level scoring and your spectral library was generated according to the IPF instructions, you should set the ``-enable_uis_scoring`` flag.
 
 Therefore, a full run of OpenSWATH may look like this:
 
