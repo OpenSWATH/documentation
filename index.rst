@@ -22,6 +22,7 @@ The tools and workflows are being developed at the `Aebersold Group at IMSB, ETH
    docs/tpp
    docs/skyline
    docs/swathatlas
+   docs/pqp
 
 .. toctree::
    :maxdepth: 3
