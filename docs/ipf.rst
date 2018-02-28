@@ -40,7 +40,7 @@ The next step is conducted using OpenSWATH. Follow the IPF-specific instructions
 
 3. Statistical validation using PyProphet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-PyProphet is then applied to the OpenSWATH results. Follow the IPF-specific instructions in the :doc:`sqlite` PyProphet section. Export a legacy TSV report for analysis with TRIC.
+PyProphet is then applied to the OpenSWATH results. Follow the IPF-specific instructions in the :doc:`pyprophet` section. Export a legacy TSV report for analysis with TRIC.
 
 4. Multi-run alignment using TRIC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
