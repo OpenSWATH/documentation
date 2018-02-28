@@ -36,16 +36,16 @@ After installation, ``PercolatorAdapter`` can be run on the OSW results using th
 .. code-block:: bash
 
    # Score on MS2-level
-   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw \
-   --osw_level ms2
+   PercolatorAdapter -in_osw openswath_results.osw -out openswath_results.osw \
+   -osw_level ms2
 
    # Score on MS1-level
-   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw \
-   --osw_level ms1
+   PercolatorAdapter -in_osw openswath_results.osw -out openswath_results.osw \
+   -osw_level ms1
 
    # Score on transition-level
-   PercolatorAdapter --in_osw openswath_results.osw --out openswath_results.osw \
-   --osw_level transition
+   PercolatorAdapter -in_osw openswath_results.osw -out openswath_results.osw \
+   -osw_level transition
 
 PyProphet
 ~~~~~~~~~
