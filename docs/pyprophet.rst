@@ -29,6 +29,8 @@ PyProphet requires Python 2.7 or Python 3. Windows users should install Anaconda
 
    pip install git+https://github.com/grosenberger/pyprophet.git@feature/refactoring
 
+.. warning::
+   As the new workflow is still in development, ensure that all data is processed by the latest ``OpenMS/develop`` and PyProphet versions.
 
 Tutorial
 --------
@@ -37,16 +39,28 @@ Generate ``OSW`` output files according to section :doc:`openswath_workflow`. Py
 
 .. code-block:: bash
 
+   pyprophet --help
+   pyprophet merge --help
+
+   
+This command provides an overview of all available commands to manipulate OSW input files. Further instructions are available for the individual commands.
+
+.. code-block:: bash
+
    pyprophet merge --out=merged.osw \
    --subsample_ratio=1 *.osw
 
-This command will merge and optionally subsample multiple files. If a set of runs should be analyzed in an experiment-wide fashion, we recommend to conduct this step. If semi-supervised learning is too slow, create an additional merged file with a smaller ``subsample_ratio``. The model will be stored in the output and can be applied to the full file.
+In most scenarios, more than a single DIA / SWATH-MS run was acquired and the samples should be compared qualitatively and/or quantitatively with the OpenSWATH workflow. After individual processing with OpenSWATH and the identical spectral library, the files can be merged by PyProphet.
+
+This command will merge and optionally subsample multiple files. Please note that the experiment-wide context on peptide query-level is applied to merged files, whereas the run-specific context is used with separate `OSW` files [4]_.
+
+If semi-supervised learning is too slow, or the run-specific context is required, create an additional merged file with a smaller ``subsample_ratio``. The model will be stored in the output and can be applied to the full file(s).
 
 .. code-block:: bash
 
    pyprophet score --in=merged.osw --level=ms2
 
-The main command will conduct semi-supervised learning and error-rate estimation in a fully automated fashion. ``--help`` will show the full selection of parameters to adjust the process. The default parameters are recommended for SCIEX TripleTOF 5600/6600 instrument data, but can be adjusted in other scenarios. 
+The main command will conduct semi-supervised learning and error-rate estimation in a fully automated fashion. ``--help`` will show the full selection of parameters to adjust the process. The default parameters are recommended for SCIEX TripleTOF 5600/6600 instrument data, but can be adjusted in other scenarios.
 
 When using the IPF extension, the parameter ``--level`` can be set to ``ms2``, ``ms1`` or ``transition``. If MS1 or transition-level data should be scored, the command is executed three times, e.g.:
 
@@ -56,6 +70,8 @@ When using the IPF extension, the parameter ``--level`` can be set to ``ms2``, `
    score --in=merged.osw --level=ms2 \
    score --in=merged.osw --level=transition
 
+The scoring steps on MS1 and transition-level have some dependencies on the MS2 peak group signals. The parameter ``--ipf_max_peakgroup_rank`` specifies how many peak group candidates should be assessed in IPF. For example, if this parameter is set to 1, only the top scoring peak group will be investigated. In some scenarios, a set of peptide query parameters might detect several peak groups of different peptidoforms that should be independently identified. If the parameter is set to 3, the top 3 peak groups are investigated. Note that for higher values (or very generic applications), it might be a better option to disable the PyProphet assumption of a single best peak group per peptide query. This can be conducted by setting ``--group_id`` to ``feature_id`` and will change the assumption that all high scoring peak groups are potential peptide signals.
+
 Importantly, PyProphet will store all results in the input OSW files. This can be changed by specifying ``--out``. However, since all steps are non-destructive, this is not necessary.
 
 If IPF should be applied after scoring, the following command can be used:
@@ -64,7 +80,9 @@ If IPF should be applied after scoring, the following command can be used:
 
    pyprophet ipf --in=merged.osw
 
-To adjust the IPF-specific parameters, please consult ``pyprophet ipf --help``.
+To adjust the IPF-specific parameters, please consult ``pyprophet ipf --help``. If MS1 or MS2 precursor data should not be used, e.g. due to poor instrument performance, this can be disabled by setting ``--no-ipf_ms1_scoring`` and ``--no-ipf_ms2_scoring``. The experimental setting ``--ipf_grouped_fdr`` can be used in case of extremly heterogeneous spectral library, e.g. containing mostly unmodified peptides that are mainly detect and peptidoforms with various potential site-localizations, which are mostly not detectable. This parameter will estimate the FDR independently group according to number of site-localizations.
+
+Several thresholds (`--ipf_max_precursor_pep`,`--ipf_max_peakgroup_pep`,` --ipf_max_precursor_peakgroup_pep`,`--ipf_max_transition_pep`) are defined for IPF to exclude very poor signals. When disabled, the error model still works, but sensitivity is reduced. Tweaking of these parameters should only be conducted with a reference data set.
 
 To conduct peptide inference in run-specific, experiment-wide and global contexts, the following command can be applied:
 
