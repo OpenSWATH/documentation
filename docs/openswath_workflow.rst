@@ -52,7 +52,9 @@ Retention time normalization
 
 The retention time normalization peptides are provided using the optional
 parameter ``tr_irt`` in TraML format. We suggest to use the ``iRTassays.TraML`` file provided in
-the tutorial dataset, if the Biognosys iRT-kit was used during sample preparation. If the iRT-kit was not used, it is highly recommended to use or generate a set of endogenous peptides for RT normalization. A recent publication [5]_ provides such a set of ``CiRT`` peptides suitable for many eukaryotic samples.
+the tutorial dataset, if the Biognosys iRT-kit was used during sample preparation.
+
+If the iRT-kit was not used, it is highly recommended to use or generate a set of endogenous peptides for RT normalization. A recent publication [5]_ provides such a set of ``CiRT`` peptides suitable for many eukaryotic samples. The TraML file from the supplementary information can be used as input for ``tr_irt``. Since not all ``CiRT`` peptides might be found, the flag ``RTNormalization:estimateBestPeptides`` should be set to improve initial filtering of poor signals. Further parameters for optimization can be found when invoking ``OpenSwathWorkflow --helphelp`` under the ``RTNormalization`` section. Those do not require adjustment for most common sample types and LC-MS/MS setups, but might be useful to tweak for specific scenarios.
 
 SWATH windows definition
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +69,6 @@ The *acquisition* settings tell the instrument how to acquire the data and how t
 The *analysis* settings on the other hand specify from which precursor isolation windows to extract the data. Note that the analysis windows should not have any overlap.
 
 We suggest to use the ``SWATHwindows_analysis.tsv`` file provided in the tutorial dataset for 32 windows of 25 Da each.
-
 
 Parameters
 ----------
@@ -128,6 +129,7 @@ Therefore, a full run of OpenSWATH may look like this:
     -mz_correction_function quadratic_regression_delta_ppm
     -TransitionGroupPicker:background_subtraction original
     -RTNormalization:alignmentMethod linear
+    -Scoring:stop_report_after_feature 5
     -out_tsv osw_output.tsv
 
 Troubleshooting
