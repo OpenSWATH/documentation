@@ -17,20 +17,13 @@ We provide support for ``PercolatorAdapter`` using the `OpenMS support channels
 Please address any general Percolator inquiries to the `Percolator team
 <http://percolator.ms/>`_.
 
-Installation
-------------
-PercolatorAdapter
-~~~~~~~~~~~~~~~~~
-``PercolatorAdapter`` is available in the OpenMS development branch. Please refer to the :doc:`openswath` tutorial for installation instructions.
-
-PyProphet
-~~~~~~~~~
-To convert the results of ``PercolatorAdapter`` to an OpenSWATH TSV report, the SQLite-enabled ``PyProphet`` version is required. Please refer to the :doc:`sqlite` tutorial for installation instructions.
-
 Tutorial
 --------
 PercolatorAdapter
 ~~~~~~~~~~~~~~~~~
+``PercolatorAdapter`` is available in the OpenMS development branch. To convert the results of ``PercolatorAdapter`` to an OpenSWATH TSV report, the SQLite-enabled ``PyProphet`` version is required. Please install these versions according to the instructions in the :doc:`binaries` section.
+
+
 After installation, ``PercolatorAdapter`` can be run on the OSW results using the following commands:
 
 .. code-block:: bash

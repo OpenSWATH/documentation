@@ -16,7 +16,7 @@ First, install `Docker Community Edition <https://www.docker.com/community-editi
 Running OpenSWATH in Docker
 ---------------------------
 
-Make sure that Docker is up and running in the background. On macOS or Linux, start a `Terminal` session. On Windows, start PowerShell, CMD or similar. Execute the following steps within the console:
+Make sure that Docker is up and running in the background. On macOS or Linux, start a Terminal session. On Windows, start PowerShell, CMD or similar. Execute the following steps within the console:
 
 .. code-block:: bash
 

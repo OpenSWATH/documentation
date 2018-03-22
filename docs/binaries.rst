@@ -19,7 +19,7 @@ Instructions for compilation and installation can be obtained from the `OpenMS d
 PyProphet
 ---------
 
-PyProphet requires Python 2.7 or Python 3. Windows users should install Anaconda, Mac and Linux users should be able to install PyProphet directly from GitHub. It is strongly recommended to install PyProphet within a `virtualenv <https://virtualenv.pypa.io/en/stable/userguide/>`_.
+PyProphet requires Python 2.7 or Python 3. Windows users should install Anaconda. Mac and Linux users should be able to install PyProphet directly from GitHub. It is strongly recommended to install PyProphet within a `virtualenv <https://virtualenv.pypa.io/en/stable/userguide/>`_.
 
 .. code-block:: bash
 
@@ -39,7 +39,7 @@ msproteomicstools requires Python 2.7 and can be installed through ``pip``. On M
    pip install numpy
    pip install msproteomicstools
 
-This will install TRIC.py which you can then execute. You can also download the msproteomicstools release directly from PyPI. To obtain the latest development version, please download the code from `GitHub <https://github.com/msproteomicstools/msproteomicstools>`_. If you are using Microsoft Windows and Anaconda, it is possible that BioPython does not properly install and you may have to install it through Anaconda:
+You can alternatively download the msproteomicstools release directly from PyPI. To obtain the latest development version, please download the code from `GitHub <https://github.com/msproteomicstools/msproteomicstools>`_. If you are using Microsoft Windows and Anaconda, it is possible that BioPython does not properly install and you may have to install it through Anaconda:
 
 .. code-block:: bash
 
