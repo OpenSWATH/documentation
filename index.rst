@@ -15,12 +15,20 @@ News
 Acknowledgments
 ---------------
 The tools and workflows are being developed at the `Aebersold Group at IMSB, ETH Zurich
-<http://www.imsb.ethz.ch/research/aebersold.html>`_ and `Stanford University
-<http://www.stanford.edu>`_ with contributions from others. The core components are implemented as part of the `OpenMS
+<http://www.imsb.ethz.ch/research/aebersold.html>`_, `University of Toronto
+<http://roestlab.org/>`_ and `Columbia University
+<https://systemsbiology.columbia.edu/>` with contributions from others. The core components are implemented as part of the `OpenMS
 <http://www.openms.org>`_ framework, the `PyProphet
 <https://github.com/PyProphet>`_, and `msproteomicstools
 <https://github.com/msproteomicstools>`_ distributions.
 
+.. toctree::
+   :maxdepth: 3
+   :caption: Installation
+   
+   docs/docker
+   docs/binaries
+   docs/sources
 
 .. toctree::
    :maxdepth: 3

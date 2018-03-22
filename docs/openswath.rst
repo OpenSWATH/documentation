@@ -18,14 +18,6 @@ You can contact the authors `Hannes Röst
 <http://www.hroest.ch>`_ and `George Rosenberger
 <http://www.rosenberger.pro>`_.
 
-Installation
-------------
-OpenSWATH is completely integrated into `OpenMS
-<http://www.openms.org>`_. We suggest to always use the most current development version of OpenMS to get the newest OpenSWATH developments. We recommend to compile the ``develop`` branch from the `OpenMS Git repository <https://github.com/OpenMS/OpenMS>`_ on Linux or, if this is not possible, to download the `nightly builds for Windows and macOS <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/>`_.
-
-Installation and compilation instructions can be obtained from the `OpenMS documentation
-<http://ftp.mi.fu-berlin.de/pub/OpenMS/release-documentation/html/index.html>`_.
-
 Tutorial
 --------
 The core step of OpenSWATH conducts signal processing by data extraction from

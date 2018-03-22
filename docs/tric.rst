@@ -18,24 +18,6 @@ We provide support for TRIC on the `GitHub repository
 You can contact the author `Hannes Röst
 <http://www.hroest.ch>`_.
 
-Installation
-------------
-TRIC requires Python 2.7 and can be installed through ``pip``. On Microsoft Windows you will first have to install Python (the easiest way to do this is to download `Anaconda
-<https://www.continuum.io/anaconda-overview>`_). You can then install TRIC through `PyPI
-<https://pypi.python.org/pypi/msproteomicstools>`_:
-
-.. code-block:: bash
-
-   pip install numpy
-   pip install msproteomicstools
-
-This will install TRIC.py which you can then execute. You can also download the TRIC release directly from PyPI. To obtain the latest development version, please download the code from `GitHub
-<https://github.com/msproteomicstools/msproteomicstools>`_. If you are using Microsoft Windows and Anaconda, it is possible that BioPython does not properly install and you may have to install it through Anaconda:
-
-.. code-block:: bash
-
-   conda install biopython
-
 Tutorial
 --------
 After installing TRIC, please familiarize yourself with the `TRIC Tutorial

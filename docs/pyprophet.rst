@@ -8,6 +8,9 @@ PyProphet [1]_ is a reimplementation of the mProphet [2]_ algorithm for targeted
 
 This description represents the new SQLite-based workflow that is currently in development. This version includes the IPF [3]_ and large-scale data set optimizations [4]_. You can alternatively follow the instructions for the :doc:`pyprophet_legacy`.
 
+.. warning::
+   As the new workflow is still in development, ensure that all data is processed by the latest ``OpenMS/develop`` and PyProphet versions.
+
 Contact and Support
 -------------------
 
@@ -19,18 +22,6 @@ You can contact the authors `Uwe Schmitt
 <https://github.com/fickludd>`_, `Hannes Röst
 <http://www.hroest.ch>`_ and `George Rosenberger
 <http://www.rosenberger.pro>`_.
-
-Installation
-------------
-
-PyProphet requires Python 2.7 or Python 3. Windows users should install Anaconda, Mac and Linux users should be able to install PyProphet directly from GitHub. It is strongly recommended to install PyProphet within a ``virtualenv``.
-
-.. code-block:: bash
-
-   pip install git+https://github.com/grosenberger/pyprophet.git@feature/refactoring
-
-.. warning::
-   As the new workflow is still in development, ensure that all data is processed by the latest ``OpenMS/develop`` and PyProphet versions.
 
 Tutorial
 --------
