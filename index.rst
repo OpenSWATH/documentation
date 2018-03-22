@@ -9,6 +9,10 @@ News
 
 .. note::
 
+   *2018-03-22:* We provide an *experimental* Docker image for the latest development version of the OpenSWATH workflow.
+
+.. note::
+
    *2017-12-28:* The tools of the OpenSWATH Workflow now provide *experimental* support for new SQLite-based file formats.
 
 

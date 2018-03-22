@@ -26,6 +26,9 @@ You can contact the authors `Uwe Schmitt
 Tutorial
 --------
 
+Merging
+~~~~~~~
+
 Generate ``OSW`` output files according to section :doc:`openswath_workflow`. PyProphet is then applied to the one or several such SQLite-based reports. Several different commands can be run to consecutively to do the analysis:
 
 .. code-block:: bash
@@ -47,6 +50,10 @@ This command will merge and optionally subsample multiple files. Please note tha
 
 If semi-supervised learning is too slow, or the run-specific context is required, create an additional merged file with a smaller ``subsample_ratio``. The model will be stored in the output and can be applied to the full file(s).
 
+
+Scoring
+~~~~~~~
+
 .. code-block:: bash
 
    pyprophet score --in=merged.osw --level=ms2
@@ -65,6 +72,9 @@ The scoring steps on MS1 and transition-level have some dependencies on the MS2 
 
 Importantly, PyProphet will store all results in the input OSW files. This can be changed by specifying ``--out``. However, since all steps are non-destructive, this is not necessary.
 
+IPF
+~~~
+
 If IPF should be applied after scoring, the following command can be used:
 
 .. code-block:: bash
@@ -74,6 +84,9 @@ If IPF should be applied after scoring, the following command can be used:
 To adjust the IPF-specific parameters, please consult ``pyprophet ipf --help``. If MS1 or MS2 precursor data should not be used, e.g. due to poor instrument performance, this can be disabled by setting ``--no-ipf_ms1_scoring`` and ``--no-ipf_ms2_scoring``. The experimental setting ``--ipf_grouped_fdr`` can be used in case of extremly heterogeneous spectral library, e.g. containing mostly unmodified peptides that are mainly detect and peptidoforms with various potential site-localizations, which are mostly not detectable. This parameter will estimate the FDR independently group according to number of site-localizations.
 
 Several thresholds (`--ipf_max_precursor_pep`,`--ipf_max_peakgroup_pep`,` --ipf_max_precursor_peakgroup_pep`,`--ipf_max_transition_pep`) are defined for IPF to exclude very poor signals. When disabled, the error model still works, but sensitivity is reduced. Tweaking of these parameters should only be conducted with a reference data set.
+
+Contexts & FDR
+~~~~~~~~~~~~~~
 
 To conduct peptide inference in run-specific, experiment-wide and global contexts, the following command can be applied:
 
@@ -92,6 +105,9 @@ Analogously, this can be conducted on protein-level as well:
    pyprophet protein --in=merged.osw --context=run-specific \
    protein --in=merged.osw --context=experiment-wide \
    protein --in=merged.osw --context=global
+
+Exporting
+~~~~~~~~~
 
 Finally, we can export the results to legacy OpenSWATH TSV report:
 

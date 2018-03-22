@@ -11,7 +11,7 @@ Users who just want to run the OpenSWATH workflow on their desktops can follow t
 Installing Docker
 -----------------
 
-Install `Docker Community Edition <https://www.docker.com/community-edition>`_. for Windows, macOS or Linux. On Linux, most current distributions provide this out-of-the-box. After installation, ensure that you assign the number of CPUs and RAM that you would like to use with OpenSWATH (e.g. 4 CPUs, 8GB RAM).
+First, install `Docker Community Edition <https://www.docker.com/community-edition>`_ for either Windows, macOS or Linux. On Linux, most current distributions provide this out-of-the-box. After installation, ensure that you assign the number of CPUs and RAM that you would like to use with OpenSWATH (e.g. 4 CPUs, 8GB RAM) and make sure to share your local drives. Please follow the instructions for `Windows <https://docs.docker.com/docker-for-windows/#shared-drives>`_ and `macOS <https://docs.docker.com/docker-for-mac/#file-sharing-tab>`_.
 
 Running OpenSWATH in Docker
 ---------------------------
@@ -25,12 +25,16 @@ Make sure that Docker is up and running in the background. On macOS or Linux, st
 
 This will download the latest version of the OpenSWATH Docker image and cache it on your machine.
 
+.. note::
+
+   Official containers for OpenMS and related tools are available via `BioContainers <https://github.com/BioContainers>`_. The image provided here provides the latest development version including related tools.
+
 .. code-block:: bash
 
    # Generate tutorial container (osw_tutorial) and log in
    docker run --name osw_tutorial --rm -v ~/Desktop/:/data -i -t grosenberger/openswath:latest
 
-This command will start a container based on the OpenSWATH image and map the local volume `~/Desktop/` (from your desktop) to `/data/` (to your container). It will open a Bash command line within the container for you to control the individual components of the workflow. If you want to exit the session, just type `exit` to return to your console. 
+This command will start a container based on the OpenSWATH image and map the local volume ``~/Desktop/`` (from your desktop) to ``/data/`` (to your container). It will open a Bash command line within the container for you to control the individual components of the workflow. If you want to exit the session, just type ``exit`` to return to your console. 
 
 Within the running container, you can execute all commands as you would in a native environment:
 
@@ -45,7 +49,7 @@ Within the running container, you can execute all commands as you would in a nat
    # Execute TRIC in docker
    feature_alignment.py --help
 
-All data that will be stored in `~/Desktop`, will be available in `/data/`. For example, we can process and write back the files like this:
+All data that will be stored in ``~/Desktop``, will be available in ``/data/``. For example, we can process and write back the files like this:
 
 .. code-block:: bash
 
