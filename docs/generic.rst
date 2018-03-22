@@ -63,7 +63,7 @@ OpenSWATH uses grouped transitions to detect candidate analyte signals. These gr
 - ``TransitionGroupId`` (free text, designates the transition group [e.g. peptide] to which this transition belongs; synomys: TransitionGroupName, transition_group_id)
 - ``TransitionId`` (free text, needs to be unique for each transition [in this file]; synonyms: TransitionName, transition_name)
 - ``Decoy`` (1: decoy, 0: target, i.e. no decoy; determines whether the transition is a decoy transition or not, synomys: decoy, isDecoy)
-- ``PeptideGroupLabel`` (free text, designates to which peptide label group (as defined in MS:1000893) the peptide belongs to<sup>2</sup>)
+- ``PeptideGroupLabel`` (free text, designates to which peptide label group (as defined in MS:1000893) the peptide belongs to)
 - ``DetectingTransition`` (1: use transition to detect peak group, 0: don't use transition for detection; synonyms: detecting_transition)
 - ``IdentifyingTransition`` (1: use transition for peptidoform inference using IPF, 0: don't use transition for identification; synonyms: identifying_transition)
 - ``QuantifyingTransition`` (1: use transition to quantify peak group, 0: don't use transition for quantification; synonyms: quantifying_transition)
