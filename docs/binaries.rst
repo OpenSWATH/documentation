@@ -27,7 +27,7 @@ PyProphet requires Python 2.7 or Python 3. Windows users should install Anaconda
    pip install numpy scipy scikit-learn pandas numexpr statsmodels Click matplotlib seaborn
 
    # Install PyProphet development version
-   pip install git+https://github.com/grosenberger/pyprophet.git@feature/refactoring
+   pip install git+https://github.com/PyProphet/pyprophet.git@master
 
 
 msproteomicstools & TRIC
