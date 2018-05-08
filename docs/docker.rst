@@ -20,8 +20,8 @@ Make sure that Docker is up and running in the background. On macOS or Linux, st
 
 .. code-block:: bash
 
-   # Download OpenSWATH image (grosenberger/openswath:latest)
-   docker pull grosenberger/openswath:latest
+   # Download OpenSWATH image (grosenberger/openswath:0.1.0)
+   docker pull grosenberger/openswath:0.1.0
 
 This will download the latest version of the OpenSWATH Docker image and cache it on your machine.
 
@@ -67,3 +67,20 @@ All data that will be stored in ``~/Desktop``, will be available in ``/data/``. 
     -RTNormalization:alignmentMethod linear \
     -Scoring:stop_report_after_feature 5 \
     -out_tsv /data/osw_output.tsv \
+
+
+Software version information
+----------------------------
+- 0.1.0
+
++-------------------+-----------+-----------+ 
+| Software          | Version   | Git       | 
++===================+===========+===========+ 
+| OpenMS            | 2.4.0a1   | 4d645a6   | 
++-------------------+-----------+-----------+ 
+| PyProphet         | 2.0.0dev1 | a401278   |
++-------------------+-----------+-----------+ 
+| Percolator        | 3.0.2     | 61e10b0   | 
++-------------------+-----------+-----------+ 
+| msproteomicstools | 0.8.0     | a107432   | 
++-------------------+-----------+-----------+ 
