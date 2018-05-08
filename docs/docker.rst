@@ -32,7 +32,7 @@ This will download the latest version of the OpenSWATH Docker image and cache it
 .. code-block:: bash
 
    # Generate tutorial container (osw_tutorial) and log in
-   docker run --name osw_tutorial --rm -v ~/Desktop/:/data -i -t grosenberger/openswath:latest
+   docker run --name osw_tutorial --rm -v ~/Desktop/:/data -i -t grosenberger/openswath:0.1.0
 
 This command will start a container based on the OpenSWATH image and map the local volume ``~/Desktop/`` (from your desktop) to ``/data/`` (to your container). It will open a Bash command line within the container for you to control the individual components of the workflow. If you want to exit the session, just type ``exit`` to return to your console. 
 
@@ -71,7 +71,7 @@ All data that will be stored in ``~/Desktop``, will be available in ``/data/``. 
 
 Software version information
 ----------------------------
-- 0.1.0
+- grosenberger/openswath:0.1.0
 
 +-------------------+-----------+-----------+ 
 | Software          | Version   | Git       | 
