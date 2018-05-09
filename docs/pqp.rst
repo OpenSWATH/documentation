@@ -84,6 +84,10 @@ Decoys can then be appended using ``OpenSwathDecoyGenerator``:
    OpenSwathDecoyGenerator -in transitionlist_optimized.TraML \
    -out transitionlist_optimized_decoys.TraML \
    
+.. warning::
+
+   If you used non-default parameters in ``OpenSwathAssayGenerator`` (i.e. ``-product_mz_threshold``, ``-allowed_fragment_types``, ``-allowed_fragment_charges``, ``-enable_detection_specific_losses`` or ``-enable_detection_unspecific_losses``), make sure to also specify them for ``OpenSwathDecoyGenerator``. The flag ``--helphelp`` will show a list of all options.
+   
 You can then convert the TraML to a PQP file:
 
 .. code-block:: bash
