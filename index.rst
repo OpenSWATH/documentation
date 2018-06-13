@@ -30,6 +30,12 @@ The tools and workflows are being developed at the `Aebersold Group at IMSB, ETH
 
 .. toctree::
    :maxdepth: 3
+   :caption: Getting Started
+
+   docs/getting_started
+
+.. toctree::
+   :maxdepth: 3
    :caption: Spectral library generation
    
    docs/generic
