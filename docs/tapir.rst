@@ -14,19 +14,19 @@ Contact and Support
 -------------------
 
 We provide support for TAPIR on the `GitHub repository
-<https://github.com/msproteomicstools/msproteomicstools/issues>`_.
-
-
-You can contact the author `Hannes Röst
-<http://www.hroest.ch>`_.
+<https://github.com/msproteomicstools/msproteomicstools/issues>`_ through GitHub issues or you 
+can contact the author `Hannes Röst
+<http://www.roestlab.org>`_.
 
 Installation
 ------------
 
-You can download binaries for `Mac
-<http://proteomics.ethz.ch/tapir/TAPIR_1.0_MAC.zip>`_ and `Microsoft Windows (64 bit)
-<http://proteomics.ethz.ch/tapir/TAPIR_1.0_WIN.zip>`_ directly from this website. The source code is available from `Github
-<https://github.com/msproteomicstools/msproteomicstools>`_ which allows source-based installation. Please follow the instructions found there for manual installation or installation on a Linux system.
+You can download binaries `from here
+<https://github.com/msproteomicstools/TAPIR/releases>`_ (Mac OSX and 64 bit
+Microsoft Windows).  The source code is available from `Github
+<https://github.com/msproteomicstools/msproteomicstools>`_ which allows
+source-based installation. Please follow the instructions found there for
+manual installation or installation on a Linux system.
 
 Note: for a successfull installation on Mac OS X, extract the provided file and drag it into the ``Applications`` folder. You may need to allow execution of the software if you see a warning that TAPIR is from an "unidentified developer". Simply go to System Preferences, click on "Security & Privacy" and in the "General" tab allow the execution of TAPIR.
 
@@ -46,20 +46,11 @@ Availability
 You can `download
 <http://proteomics.ethz.ch/tapir/sample_data_small.zip>`_ a small sample dataset. A larger, real-life dataset can be obtained by downloading these five files (this might take a while since the whole dataset is ca 5 GB)
 
-`Dataset 1 (Cond 1)
-<http://proteomics.ethz.ch/tapir/hroest_K120808_Strep0PlasmaBiolRepl1_R02_SW.chrom.mzML>`_
-
-`Dataset 2 (Cond 1)
-<http://proteomics.ethz.ch/tapir/hroest_K120808_Strep0PlasmaBiolRepl2_R02_SW.chrom.mzML>`_
-
-`Dataset 3 (Cond 2)
-<http://proteomics.ethz.ch/tapir/hroest_K120808_Strep10PlasmaBiolRepl1_R02_SW.chrom.mzML>`_
-
-`Dataset 4 (Cond 2)
-<http://proteomics.ethz.ch/tapir/hroest_K120808_Strep10PlasmaBiolRepl2_R02_SW.chrom.mzML>`_
-
-`Peak description file
-<http://proteomics.ethz.ch/tapir/picked_peaks.csv>`_
+- `Dataset 1 (Cond 1) <http://proteomics.ethz.ch/tapir/hroest_K120808_Strep0PlasmaBiolRepl1_R02_SW.chrom.mzML>`_
+- `Dataset 2 (Cond 1) <http://proteomics.ethz.ch/tapir/hroest_K120808_Strep0PlasmaBiolRepl2_R02_SW.chrom.mzML>`_
+- `Dataset 3 (Cond 2) <http://proteomics.ethz.ch/tapir/hroest_K120808_Strep10PlasmaBiolRepl1_R02_SW.chrom.mzML>`_
+- `Dataset 4 (Cond 2) <http://proteomics.ethz.ch/tapir/hroest_K120808_Strep10PlasmaBiolRepl2_R02_SW.chrom.mzML>`_
+- `Peak description file <http://proteomics.ethz.ch/tapir/picked_peaks.csv>`_
 
 This dataset is retrieved from the original OpenSWATH publication [2]_ and the two conditions (0% and 10%) refer to the treatment of *S. pyogenes* with human plasma. For each condition, two biological replicates are available.
 

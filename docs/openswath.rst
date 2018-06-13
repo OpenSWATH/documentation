@@ -12,7 +12,7 @@ Contact and Support
 -------------------
 
 We provide support for OpenSWATH using the `OpenMS support channels
-<http://www.openms.de/support/>`_. Please address general questions to the open-ms-general mailing list.
+<http://www.openms.de/support/>`_. Please address general questions to the `mailing list <https://sourceforge.net/projects/open-ms/lists/open-ms-general>`_.
 
 You can contact the authors `Hannes Röst
 <http://www.hroest.ch>`_ and `George Rosenberger
