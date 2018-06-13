@@ -1,6 +1,10 @@
 Getting Started
 ===============
 
+.. note::
+
+   OpenSWATH is part of the OpenMS project, therefore if you install OpenMS you will get OpenSWATH automatically. Please refer to our `installation instructions <binaries.html>`_.
+
 To get started with the DIA or SWATH-MS analysis, we recommend to follow the
 recently published step-for-step tutorial [1]_ describing a complete OpenSWATH
 analysis workflow using ``OpenSwathWorkflow`` available from `bioRxiv
