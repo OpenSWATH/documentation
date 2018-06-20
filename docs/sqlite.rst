@@ -34,7 +34,7 @@ We have developed a new, substantially changed version of PyProphet that integra
 
 .. code-block:: bash
 
-   pip install git+https://github.com/grosenberger/pyprophet.git@feature/refactoring
+   pip install git+https://github.com/PyProphet/pyprophet
 
 TRIC
 ~~~~
