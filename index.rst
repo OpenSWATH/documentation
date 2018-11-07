@@ -9,6 +9,14 @@ News
 
 .. note::
 
+   *2018-11-07:* The Docker image now includes OpenMS 2.4.0 and PyProphet 2.0.1.
+
+.. note::
+
+   *2018-11-07:* With the release of OpenMS 2.4.0 and PyProphet 2.0.1, the new OpenSWATH workflow is available in the release branches.
+
+.. note::
+
    *2018-03-22:* We provide an *experimental* Docker image for the latest development version of the OpenSWATH workflow.
 
 .. note::
