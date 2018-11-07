@@ -6,10 +6,6 @@ Overview
 
 Precompiled or prepackaged versions of OpenMS, PyProphet and msproteomicstools are readily available for most supported platforms. 
 
-.. warning::
-
-   Please note that the published versions are always based on the latest `release` versions, however some functionality described online might only be available in the latest `development` builds.
-
 OpenMS
 ------
 OpenSWATH is completely integrated into `OpenMS <http://www.openms.org>`_. The current releases can be obtained from `GitHub <https://github.com/OpenMS/OpenMS/releases>`_. To make use of the latest developments, consider using the `nightly builds for Windows and macOS <https://abibuilder.informatik.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/>`_.
@@ -25,8 +21,11 @@ PyProphet requires Python 2.7 or Python 3. Windows users should install Anaconda
 
    # Install dependencies
    pip install numpy scipy scikit-learn pandas numexpr statsmodels Click matplotlib seaborn
+   
+   # Install PyProphet release version
+   pip install pyprophet
 
-   # Install PyProphet development version
+   # Alternative: Install PyProphet development version
    pip install git+https://github.com/PyProphet/pyprophet.git@master
 
 
