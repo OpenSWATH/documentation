@@ -20,19 +20,19 @@ Make sure that Docker is up and running in the background. On macOS or Linux, st
 
 .. code-block:: bash
 
-   # Download OpenSWATH image (openswath/openswath:0.1.2)
-   docker pull openswath/openswath:0.1.2
+   # Download OpenSWATH image (openswath/openswath:0.2.0)
+   docker pull openswath/openswath:0.2.0
 
 This will download the latest version of the OpenSWATH Docker image and cache it on your machine.
 
 .. note::
 
-   Official containers for OpenMS and related tools are available via `BioContainers <https://github.com/BioContainers>`_. The image provided here provides the latest development version including related tools.
+   Official containers for OpenMS and related tools are available via `BioContainers <https://github.com/BioContainers>`_. The image provided here provides compatible release or development versions including related tools in an integrated container.
 
 .. code-block:: bash
 
    # Generate tutorial container (osw_tutorial) and log in
-   docker run --name osw_tutorial --rm -v ~/Desktop/:/data -i -t openswath/openswath:0.1.2
+   docker run --name osw_tutorial --rm -v ~/Desktop/:/data -i -t openswath/openswath:0.2.0
 
 This command will start a container based on the OpenSWATH image and map the local volume ``~/Desktop/`` (from your desktop) to ``/data/`` (to your container). It will open a Bash command line within the container for you to control the individual components of the workflow. If you want to exit the session, just type ``exit`` to return to your console. 
 
