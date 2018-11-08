@@ -38,8 +38,7 @@ This command provides an overview of all available commands to manipulate OSW in
 
 .. code-block:: bash
 
-   pyprophet merge --out=merged.osw \
-   --subsample_ratio=1 *.osw
+   pyprophet merge --out=merged.osw --subsample_ratio=1 *.osw
 
 In most scenarios, more than a single DIA / SWATH-MS run was acquired and the samples should be compared qualitatively and/or quantitatively with the OpenSWATH workflow. After individual processing with OpenSWATH and the identical spectral library, the files can be merged by PyProphet.
 
@@ -128,8 +127,7 @@ In the first step, we will generate a subsampled classifer that is much faster t
 
    # Here we recommend to set subsample_rate to 1/N, where N is the number of runs.
    # Example for N=10 runs:
-   pyprophet merge --out=model.osw \
-   --subsample_ratio=0.1 *.osw
+   pyprophet merge --out=model.osw --subsample_ratio=0.1 *.osw
    
 In case of very large data sets, this step can alternatively be parallelized:
 
@@ -140,8 +138,7 @@ In case of very large data sets, this step can alternatively be parallelized:
    for run in run_*.osw
    do
    run_subsampled = ${run}s # generates .osws files
-   pyprophet merge --out=$run_subsampled \
-   --subsample_ratio=0.1 $run
+   pyprophet merge --out=$run_subsampled --subsample_ratio=0.1 $run
    done
    
    pyprophet merge --out=model.osw *.osws
