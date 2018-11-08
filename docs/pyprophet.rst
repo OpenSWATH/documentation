@@ -26,7 +26,7 @@ Tutorial
 Merging
 ~~~~~~~
 
-Generate ``OSW`` output files according to section :doc:`openswath_workflow`. PyProphet is then applied to one or several such SQLite-based reports. Several different commands can be run to consecutively to do the analysis:
+Generate ``OSW`` output files according to section :doc:`openswath_workflow`. PyProphet is then applied to one or several such SQLite-based reports. Several different commands can be run to consecutively do the analysis:
 
 .. code-block:: bash
 
@@ -117,6 +117,72 @@ By default, both peptide- and transition-level quantification is reported, which
 .. warning::
    By default, IPF results on peptidoform-level will be used if available. This can be disabled by setting ``--ipf=disable``. The IPF results require different properties for TRIC. Please ensure that you want to analyze the results in the context of IPF, else, use the ``--ipf=disable`` or ``--ipf=augmented`` settings.
 
+Scaling up
+~~~~~~~~~~
+
+When moving to larger data sets that include 10-1000s of runs, the workflow described above might take a lot of time. For such applications, especially when the analysis is run on HPC infrastructure (cloud, cluster, etc.) we have implemented steps that can mostly parallelize on the level of independent runs:
+
+In the first step, we will generate a subsampled classifer that is much faster to learn:
+
+.. code-block:: bash
+
+   # Here we recommend to set subsample_rate to 1/N, where N is the number of runs.
+   # Example for N=10 runs:
+   pyprophet merge --out=model.osw \
+   --subsample_ratio=0.1 *.osw
+ 
+We then learn a classifer on MS1/MS2-level and store the results in ``model.osw``:
+ 
+.. code-block:: bash
+ 
+ pyprophet score --in=model.osw --level=ms1ms2
+ 
+This classifier is then applied to all individual runs in parallel:
+
+.. code-block:: bash
+ 
+ for run in run_*.osw
+ do
+ pyprophet score --in=$run --apply_weights=model.osw --level=ms1ms2
+ done
+ 
+We then extract the relevant data for global scoring to generate a tiny file:
+
+.. code-block:: bash
+ 
+ for run in run_*.osw
+ do
+ run_reduced = ${run}r # generates .oswr files
+ pyprophet reduce --in=$run --out=$run_reduced
+ done
+ 
+Next, global peptide and protein-level error rate control is conducted by merging the ``oswr`` files:
+
+.. code-block:: bash
+ 
+ pyprophet merge --template=model.osw --out=model_global.osw *.oswr
+
+ pyprophet peptide --context=global --in=model_global.osw
+ 
+ pyprophet protein --context=global --in=model_global.osw
+ 
+Now we backpropagate the global statistics to the individual runs:
+
+.. code-block:: bash
+
+ for run in run_*.osw
+ do
+ pyprophet backpropagate --in=$run --apply_scores=$run_reduced
+ done
+
+We can then export the results with confidence scores on peptide-query-level (run-specific context), peptide sequence level (global context) and protein level (global context) in parallel:
+
+.. code-block:: bash
+
+ for run in run_*.osw
+ do
+ pyprophet export --in=$run
+ done
 
 References
 ----------
