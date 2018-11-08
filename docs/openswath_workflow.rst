@@ -3,6 +3,9 @@ Integrated OpenSWATH Workflow
 
 Overview
 --------
+OpenSWATH [1]_ is a proteomics software that allows analysis of LC-MS/MS DIA (data independent acquisition) data using the approach described by Gillet et al. [2]_ and implemented as part of OpenMS [3]_. The original SWATH-MS method uses 32 cycles to iterate through precursor ion windows from 400-426 Da to 1175-1201 Da and at each step acquire a complete, multiplexed fragment ion spectrum of all precursors present in that window. After 32 fragmentations (or 3.2 seconds), the cycle is restarted and the first window (400-426 Da) is fragmented again, thus delivering complete "snapshots" of all fragments of a specific window every 3.2 seconds.
+
+The analysis approach described by Gillet et al. extracts ion traces of specific fragment ions from all MS2 spectra that have the same precursor isolation window, thus generating data that is very similar to SRM traces.
 
 The OpenSwathWorkflow executable is currently the most efficient way of running
 OpenSWATH [1]_ [2]_ and it is available through OpenMS [3]_.  An extended
@@ -23,6 +26,16 @@ It executes the following steps in order:
  - Extracting the specified transitions
  - Scoring the peak groups in the extracted ion chromatograms (XIC)
  - Reporting the peak groups and the chromatograms
+
+Contact and Support
+-------------------
+
+We provide support for OpenSWATH using the `OpenMS support channels
+<http://www.openms.de/support/>`_. Please address general questions to the `mailing list <https://sourceforge.net/projects/open-ms/lists/open-ms-general>`_.
+
+You can contact the authors `Hannes Röst
+<http://www.hroest.ch>`_ and `George Rosenberger
+<http://www.rosenberger.pro>`_.
 
 Input
 -----
@@ -143,7 +156,6 @@ can adjust the smoothing parameters for the peak picking, by adjusting
 Gaussian smoothing based on your estimated peak width. Adjusting the signal
 to noise threshold will make the peaks wider or smaller.
 
-
 Output
 ------
 
@@ -162,6 +174,54 @@ with an ``.mzML`` extension. By default the produced mzML file will be numpress
 compressed, but can be converted to regular mzML using the OpenMS
 ``FileConverter``. Alternatively, output can be written in ``.sqMass`` format,
 which is a SQLite-based format (experimental).
+
+Tutorial Data
+-------------
+
+Availability
+~~~~~~~~~~~~
+
+To learn OpenSWATH, we suggest to use the *M. tuberculosis* dataset published
+alongside the 2017 Methods Mol Biol. OpenSWATH tutorial [4]_ which is available
+from the PeptideAtlas raw data repository with accession number 
+`PASS00779 <http://www.peptideatlas.org/PASS/PASS00779>`_.
+
+The SWATH-MS Gold Standard and *Streptococcus pyogenes* data sets (used in the
+original 2014 Nature Biotechnoly publication) are available from the
+PeptideAtlas raw data repository with accession number 
+`PASS00289 <http://www.peptideatlas.org/PASS/PASS00289>`_.
+
+The Skyline results are available from `Skyline Panorama Webserver
+<https://daily.panoramaweb.org/labkey/project/Aebersold/rosenberger/OpenSWATH_SGS/begin.view>`_.
+
+Mycobacterium tuberculosis data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 3 mzML instrument data files (centroided)
+- 3 WIFF raw instrument data files 
+- Mtb assay library (for OpenMS 2.1)
+- Mtb assay library (for older OpenMS)
+- Swath windows file for analysis
+- iRT assay file (TraML format)
+
+SWATH-MS Gold Standard
+~~~~~~~~~~~~~~~~~~~~~~
+- 90 mzXML instrument data files
+- 90 WIFF raw instrument data files
+- SGS TSV assay library
+- SGS TraML assay library
+- SGS OpenSWATH results
+- SGS Skyline results on Panorama
+- SGS manual results
+
+Streptococcus pyogenes
+~~~~~~~~~~~~~~~~~~~~~~
+- 4 mzXML instrument data files
+- 4 WIFF raw instrument data files
+- *S. pyo* TSV assay library
+- *S. pyo* TraML assay library
+- *S. pyo* OpenSWATH results
+- *S. pyo* summary results
 
 References
 ----------
