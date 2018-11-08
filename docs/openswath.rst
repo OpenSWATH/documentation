@@ -1,5 +1,5 @@
-Integrated OpenSWATH Workflow
-================
+OpenSWATH
+=========
 
 Overview
 --------
