@@ -38,13 +38,17 @@ This command provides an overview of all available commands to manipulate OSW in
 
 .. code-block:: bash
 
-   pyprophet merge --out=merged.osw --subsample_ratio=1 *.osw
+   pyprophet merge --template=library.pqp --out=merged.osw *.osw
 
 In most scenarios, more than a single DIA / SWATH-MS run was acquired and the samples should be compared qualitatively and/or quantitatively with the OpenSWATH workflow. After individual processing with OpenSWATH and the identical spectral library, the files can be merged by PyProphet.
 
-This command will merge and optionally subsample multiple files. Please note that the experiment-wide context on peptide query-level is applied to merged files, whereas the run-specific context is used with separate `OSW` files [4]_.
+This command will merge multiple files using a reference PQP or OSW file containing a library as template. Please note that the experiment-wide context on peptide query-level is applied to merged files, whereas the run-specific context is used with separate `OSW` files [4]_. The model will be stored in the output and can be applied to the full file(s).
 
-If semi-supervised learning is too slow, or the run-specific context is required, create an additional merged file with a smaller ``subsample_ratio``. The model will be stored in the output and can be applied to the full file(s).
+If semi-supervised learning is too slow, or the run-specific context is required, subsample the files before merging with a smaller ``subsample_ratio``:
+
+.. code-block:: bash
+
+   pyprophet subsample --in=merged.osw --out=subsampled.osw --subsample_ratio=0.1
 
 
 Scoring
