@@ -20,7 +20,7 @@ You can access the tutorial data (a *M. tuberculosis* dataset) used in the
 
 - 3 mzML instrument data files (centroided)
 - 3 WIFF raw instrument data files 
-- Mtb assay library (for OpenMS 2.1)
+- Mtb assay library (for OpenMS 2.1 and higher)
 - Mtb assay library (for older OpenMS)
 - Swath windows file for analysis
 - iRT assay file (TraML format)
