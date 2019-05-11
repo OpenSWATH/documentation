@@ -20,8 +20,8 @@ Make sure that Docker is up and running in the background. On macOS or Linux, st
 
 .. code-block:: bash
 
-   # Download OpenSWATH image (openswath/openswath:0.2.0)
-   docker pull openswath/openswath:0.2.0
+   # Download OpenSWATH image (openswath/openswath:latest)
+   docker pull openswath/openswath:latest
 
 This will download the latest version of the OpenSWATH Docker image and cache it on your machine.
 
@@ -32,7 +32,7 @@ This will download the latest version of the OpenSWATH Docker image and cache it
 .. code-block:: bash
 
    # Generate tutorial container (osw_tutorial) and log in
-   docker run --name osw_tutorial --rm -v ~/Desktop/:/data -i -t openswath/openswath:0.2.0
+   docker run --name osw_tutorial --rm -v ~/Desktop/:/data -i -t openswath/openswath:latest
 
 This command will start a container based on the OpenSWATH image and map the local volume ``~/Desktop/`` (from your desktop) to ``/data/`` (to your container). It will open a Bash command line within the container for you to control the individual components of the workflow. If you want to exit the session, just type ``exit`` to return to your console. 
 
