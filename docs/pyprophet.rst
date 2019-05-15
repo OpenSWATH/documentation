@@ -131,18 +131,10 @@ In the first step, we will generate a subsampled classifer that is much faster t
 
    # Here we recommend to set subsample_rate to 1/N, where N is the number of runs.
    # Example for N=10 runs:
-   pyprophet merge --out=model.osw --subsample_ratio=0.1 *.osw
-   
-In case of very large data sets, this step can alternatively be parallelized:
-
-.. code-block:: bash
-
-   # Here we recommend to set subsample_rate to 1/N, where N is the number of runs.
-   # Example for N=10 runs:
    for run in run_*.osw
    do
    run_subsampled = ${run}s # generates .osws files
-   pyprophet merge --out=$run_subsampled --subsample_ratio=0.1 $run
+   pyprophet subsample --in=$run --out=$run_subsampled --subsample_ratio=0.1
    done
    
    pyprophet merge --out=model.osw *.osws
