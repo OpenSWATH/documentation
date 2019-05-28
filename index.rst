@@ -84,6 +84,12 @@ The OpenSWATH Workflow
 
 .. toctree::
    :maxdepth: 3
+   :caption: Mobi-DIK 
+   
+   docs/mobi-dik
+
+.. toctree::
+   :maxdepth: 3
    :caption: Differential expression analysis
    
    docs/swath2stats
