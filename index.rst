@@ -87,6 +87,10 @@ The OpenSWATH Workflow
    :caption: Mobi-DIK 
    
    docs/mobi-dik
+   docs/dataconversion
+   docs/installation
+   docs/librarygeneration
+   docs/openswath_mobidik
 
 .. toctree::
    :maxdepth: 3
