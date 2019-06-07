@@ -14,7 +14,7 @@ We provide support for Mobi-DIK on `Gitter <https://gitter.im/OpenMS/OpenMS>`_ a
 Installation
 ------------
 
-Mobi-DIK is fully integrated within the tools of the OpenSWATH workflow. Please follow the :doc:`openswath`, :doc:`pyprophet` and :doc:`tric` installation instructions for the latest development branches. 
+Mobi-DIK is fully integrated within the tools of the OpenSWATH workflow. Please follow the `installation instructions <binaries.html>`_ for the latest development branches. 
 
 Tutorial
 --------
@@ -23,9 +23,6 @@ TODO
 
 Data
 ----
-
-Availability
-~~~~~~~~~~~~
 
 TODO
 

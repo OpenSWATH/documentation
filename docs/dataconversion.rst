@@ -1,8 +1,9 @@
-Data Conversion
-===============
+MOBI-DIK Data Conversion
+========================
 
-The generated .tdf files from DIA pasef runs can be converted to standard 
-formats (mzML) with diapysef.
+For the Mobi-DIK workflow, the generated .tdf files from diaPASEF runs can be
+converted to standard formats (mzML) with ``diapysef``. Make sure ``diapysef``
+is installed before you proceed.
 
 Using the script ``convertTDFtoMzML.py`` can convert the .tdf file to
 a single mzML file. It allows merging of frames for the same precursors, 
@@ -11,13 +12,13 @@ settings, and compression of data with PyMSNumpress.
 
 Inputs
 ------
--- ``-a``: Analysis directory of the raw data (.d) (Required)
--- ``-o``: Output filename (Required)
--- ``-m``: Number of frames for merging
--- ``-overlap``: Number of overlapping windows
--- ``-r``: Range of frames to convert
+- ``-a``: Analysis directory of the raw data (.d) (Required)
+- ``-o``: Output filename (Required)
+- ``-m``: Number of frames for merging
+- ``-overlap``: Number of overlapping windows
+- ``-r``: Range of frames to convert
 
-For detailed options and descriptions, simple type:
+For detailed options and descriptions, simply type:
 
 .. code:: bash
 

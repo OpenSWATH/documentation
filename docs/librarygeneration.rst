@@ -7,7 +7,7 @@ identifications. Currently, we acquire our library through using deeply
 fractionated sample runs that are analyzed in MaxQuant.
 
 The general steps for generating the spectral library are, annotating ion
-mobility values in the MQ output, correcting retention time and ion mobilty 
+mobility values in the MQ output, correcting retention time and ion mobility 
 values against iRT peptides, formatting it to OpenSwath read-able format, 
 generate the spectral library formats (.TraML, .pqp, .tsv) with OpenSwath.
 
@@ -15,9 +15,10 @@ generate the spectral library formats (.TraML, .pqp, .tsv) with OpenSwath.
 Annotating Ion Mobility
 ^^^^^^^^^^^^^^^^^^^^^^^
 Generating the library requires the DDA output files from MaxQuant.
-* msms.txt
-* allPeptides.txt
-* evidence.txt
+
+- msms.txt
+- allPeptides.txt
+- evidence.txt
 
 Before generating the assay library, the ion mobility values have to be 
 converted from scan numbers in MaxQuant output to the standardized 1/K0 
@@ -32,7 +33,7 @@ Correcting RT and IM values
 
 For correcting the retention time and ion mobility values, an iRT peptide 
 library file including ion mobility dimension is required. Having the 
-MaxQuant output directory (annotated with ion mobiltiy 1/K0) and iRT file,
+MaxQuant output directory (annotated with ion mobility 1/K0) and iRT file,
 we can generate an OpenSwath readable format of library.
 
 .. code:: python
@@ -88,10 +89,12 @@ using ``OpenSwathAssayGenerator``.
 
 Inputs
 ------
-``OpenSwathAssayGenerator`` requires several inputs parameters.
--- ``in`` : Input file of library transitions
--- ``out``: Output file with valid extensions
--- ``swath_windows_file``: File contains isolation window information
+
+``OpenSwathAssayGenerator`` requires several inputs parameters:
+
+- ``in`` : Input file of library transitions
+- ``out``: Output file with valid extensions
+- ``swath_windows_file``: File contains isolation window information
 
 
 An example would be this:
@@ -110,11 +113,13 @@ and identification. It can be done through ``OpenSwathDecoyGenerator``.
 
 Inputs
 ------
+
 ``OpenSwathDecoyGenerator`` requires several input parameters.
--- ``in``: Input file of the target assay library
--- ``out``: Output file of the target-decoy library
--- ``method``: Method of generating the decoy
--- ``switchKR``: Boolean of switching the termini of the decoy peptides
+
+- ``in``: Input file of the target assay library
+- ``out``: Output file of the target-decoy library
+- ``method``: Method of generating the decoy
+- ``switchKR``: Boolean of switching the termini of the decoy peptides
 
 An example would be this:
 

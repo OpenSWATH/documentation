@@ -21,13 +21,13 @@ typing
 
 
 Downstream data analysis with ion mobility is processed with OpenMS version 2.4.0 with
-OpenSwath bindings. Detailed documentation of ``OpenSWath`` can be found `here <http://openswath.org/en/latest/docs/openswath.html>`_.
+OpenSwath bindings. 
 
 Source
 ******
 
 To download diapysef from :index:`source` and the developmental version, you have to
-clone the github repository (not published yet) and compile for the .whl file.
+clone the github repository (not published yet) and compile for the ``.whl`` file.
 
 .. code-block:: bash
 
