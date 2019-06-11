@@ -32,6 +32,5 @@ Statistical Validation
 ----------------------
 
 ``PyProphet`` can take the scores generated from ``OpenSwathWorkflow`` and statistically validate 
-the precursor identifications. For detailed documentation, please refer to `the website 
-<http://openswath.org/en/latest/docs/binaries.html#pyprophet>`_. 
+the precursor identifications. For detailed documentation, please refer to :doc:`pyprophet`.
 
