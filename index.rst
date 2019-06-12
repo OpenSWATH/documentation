@@ -1,6 +1,9 @@
 Introduction
 ====================================
-The OpenSWATH Workflow enables targeted data analysis of data-independent acquisition (DIA) or SWATH-MS proteomic data. The main workflow consists of OpenSWATH, PyProphet, TRIC, IPF and TAPIR. This website provides documentation on installation and application of the tools.
+The OpenSWATH Workflow enables targeted data analysis of data-independent
+acquisition (DIA) or SWATH-MS proteomic data. The main workflow consists of
+OpenSWATH, PyProphet, TRIC, IPF and TAPIR. This website provides documentation
+on installation and application of the tools.
 
 .. image:: img/OpenSWATH_Workflow.svg
 
@@ -13,7 +16,8 @@ News
 
 .. note::
 
-   *2018-11-07:* With the release of OpenMS 2.4.0 and PyProphet 2.0.1, the new OpenSWATH workflow is available in the release branches.
+   *2018-11-07:* With the release of OpenMS 2.4.0 and PyProphet 2.0.1, the new
+   OpenSWATH workflow is available in the release branches.
 
 .. note::
 
@@ -88,7 +92,6 @@ The OpenSWATH Workflow
    
    docs/mobi-dik
    docs/dataconversion
-   docs/installation
    docs/librarygeneration
    docs/openswath_mobidik
 

@@ -66,17 +66,17 @@ Alternatively, we also have a script as a commandline tool that can be called wi
 
 .. code:: bash
 
-   python create_library.py
+   create_library.py
 
 For details and options of the script, simply type:
 
 .. code:: bash
 
-   python create_library.py --help
+   create_library.py --help
 
 
 Generating Assay Library
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-After generating the spectral library with diapysef, the ``tsv`` file can be imported into ``OpenSwathAssayGenerator`` and ``OpenSwathDecoyGenerator`` as documented in :doc:`pqp`
+After generating the spectral library with diapysef, the ``tsv`` file can be imported into ``OpenSwathAssayGenerator`` and ``OpenSwathDecoyGenerator`` as documented in :doc:`pqp`.
 
