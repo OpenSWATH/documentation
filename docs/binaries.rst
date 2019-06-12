@@ -67,7 +67,7 @@ MOBI-DIK & diapysef
 MOBI-DIK uses a python package ``diapysef`` for data conversion and library
 generation. It requires Python 3 and can be installed through ``pip``. For
 analyzing ion mobility data, a Bruker distributed sdk library is required. The
-sdk library can be obtained throughBruker distributions or through installing
+sdk library can be obtained through Bruker distributions or through installing
 `ProteoWizard <http://proteowizard.sourceforge.net/download.html>`_. The
 libraries would be ``timsdata.dll`` for Windows and ``libtimsdata.so`` for
 Linux. You can install diapysef through `PyPI
