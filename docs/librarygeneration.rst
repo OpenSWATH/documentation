@@ -74,6 +74,18 @@ For details and options of the script, simply type:
 
    create_library.py --help
 
+Here is an example for running the commandline tool:
+
+.. code:: bash
+
+   create_library.py --pasefdata pasef_analysis_path.d/\
+                     --mqout MaxQuant_output_dir  \
+		     --irt iRT_file.tsv \
+		     --outfile mqout.tsv \
+		     --rt_alignment nonlinear \
+		     --im_alignment linear
+
+
 
 Generating Assay Library
 ^^^^^^^^^^^^^^^^^^^^^^^^
