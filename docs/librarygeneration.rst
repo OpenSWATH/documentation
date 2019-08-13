@@ -92,3 +92,11 @@ Generating Assay Library
 
 After generating the spectral library with diapysef, the ``tsv`` file can be imported into ``OpenSwathAssayGenerator`` and ``OpenSwathDecoyGenerator`` as documented in :doc:`pqp`.
 
+Here is an example for running the tools taking the files generated from ``create_library.py`` above:
+
+.. code:: bash
+   
+   OpenSwathAssayGenerator -in mqout.tsv -out assay_lib.pqp -swath_windows_file setup.tsv
+
+   OpenSwathDecoyGenerator -in assay_lib.pqp -out assay_lib_target_decoy.pqp -method pseudo-reverse -switchKR true
+
