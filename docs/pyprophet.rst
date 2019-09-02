@@ -180,7 +180,7 @@ Now we backpropagate the global statistics to the individual runs:
 
  for run in run_*.osw
  do
- pyprophet backpropagate --in=$run --apply_scores=$run_reduced
+ pyprophet backpropagate --in=$run --apply_scores=model_global.osw
  done
 
 We can then export the results with confidence scores on peptide-query-level (run-specific context), peptide sequence level (global context) and protein level (global context) in parallel:
