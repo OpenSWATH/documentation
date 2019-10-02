@@ -166,7 +166,7 @@ The OpenSwathWorkflow produces two types of output:
 
 
 the identified peaks can be stored in tsv format using ``-out_tsv``
-(recommended), in SQLite format using ``--out_osw`` (experimental) or in a
+(recommended), in SQLite format using ``-out_osw`` (experimental) or in a
 featureXML format using ``-out_features`` (not recommended).
 
 the extracted chromatograms can be stored in mzML format using ``out_chrom``
