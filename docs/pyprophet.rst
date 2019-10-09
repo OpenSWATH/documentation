@@ -137,7 +137,7 @@ In the first step, we will generate a subsampled classifer that is much faster t
    pyprophet subsample --in=$run --out=$run_subsampled --subsample_ratio=0.1
    done
    
-   pyprophet merge --out=model.osw *.osws
+   pyprophet merge --template=library.pqp --out=model.osw *.osws
  
 We then learn a classifer on MS1/MS2-level and store the results in ``model.osw``:
  
