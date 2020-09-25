@@ -138,7 +138,8 @@ Therefore, a full run of OpenSWATH may look like this:
     -sort_swath_maps -batchSize 1000
     -readOptions cacheWorkingInMemory -tempDirectory C:\Temp
     -use_ms1_traces
-    -mz_extraction_window 50 -ppm
+    -mz_extraction_window 50 
+    -mz_extraction_window_unit ppm
     -mz_correction_function quadratic_regression_delta_ppm
     -TransitionGroupPicker:background_subtraction original
     -RTNormalization:alignmentMethod linear
