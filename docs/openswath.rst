@@ -54,6 +54,8 @@ The input file ``in`` is generally a single ``mzML``, ``mzXML`` or ``sqMass`` fi
 (converted from a raw vendor file format using `ProteoWizard
 <http://proteowizard.sourceforge.net/>`_).
 
+.. note:: If your data has been acquired using a staggered SWATH acquisition scheme, you will need to add a filter in msconvert to **demultiplex** the data with optimization set to **Overlap Only**. 
+
 Spectral library
 ~~~~~~~~~~~~~~~~
 
