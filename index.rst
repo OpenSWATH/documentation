@@ -9,6 +9,14 @@ News
 
 .. note::
 
+   *2020-05-09:* With OpenMS 3.4.0, OpenSWATH supports automated spectrum addition at RT feature peak apex, peak picking extracted ion mobilograms, and ion mobility scoring for identifying transitions for IPF.
+
+.. note::
+
+   *2020-02-24:* With OpenMS 2.4.0, OpenSWATH supports ion mobility extraction and scoring (diaPASEF data), supports PRM data, supports metabolite assay library generation (via SIRIUS), extraction and scoring.
+
+.. note::
+
    *2018-11-07:* The Docker image now includes OpenMS 2.4.0 and PyProphet 2.0.1.
 
 .. note::
@@ -84,7 +92,7 @@ The OpenSWATH Workflow
 
 .. toctree::
    :maxdepth: 3
-   :caption: Mobi-DIK 
+   :caption: Mobi-DIK (diaPASEF)
    
    docs/mobi-dik
    docs/dataconversion

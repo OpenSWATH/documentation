@@ -80,6 +80,6 @@ References
 
 .. [1] Röst HL, Rosenberger G, Navarro P, Gillet L, Miladinović SM, Schubert OT, Wolski W, Collins BC, Malmström J, Malmström L, Aebersold R. OpenSWATH enables automated, targeted analysis of data-independent acquisition MS data. Nat Biotechnol. 2014 Mar 10;32(3):219-23. doi: 10.1038/nbt.2841. PMID: 24727770
 .. [2] see https://github.com/Roestlab/dia-pasef/
-.. [3] Florian Meier, Andreas-David Brunner, Max Frank, Annie Ha, Eugenia Voytik, Stephanie Kaspar-Schoenefeld, Markus Lubeck, Oliver Raether, Ruedi Aebersold, Ben C. Collins, Hannes L. Röst, Matthias Mann. Parallel accumulation – serial fragmentation combined with data-independent acquisition (diaPASEF): Bottom-up proteomics with near optimal ion usage doi: https://doi.org/10.1101/656207
+.. [3] Florian Meier, Andreas-David Brunner, Max Frank, Annie Ha, Eugenia Voytik, Stephanie Kaspar-Schoenefeld, Markus Lubeck, Oliver Raether, Ruedi Aebersold, Ben C. Collins, Hannes L. Röst, Matthias Mann. diaPASEF: parallel accumulation–serial fragmentation combined with data-independent acquisition. Nature Methods volume 17, pages 1229–1236 (2020). doi: https://www.nature.com/articles/s41592-020-00998-0
 
 
