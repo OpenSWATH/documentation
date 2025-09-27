@@ -9,7 +9,7 @@ News
 
 .. note::
 
-   *2020-05-09:* With OpenMS 3.4.0, OpenSWATH supports automated spectrum addition at RT feature peak apex, peak picking extracted ion mobilograms, and ion mobility scoring for identifying transitions for IPF.
+   *2025-05-09:* With OpenMS 3.4.0, OpenSWATH supports automated spectrum addition at RT feature peak apex, peak picking extracted ion mobilograms, and ion mobility scoring for identifying transitions for IPF.
 
 .. note::
 
