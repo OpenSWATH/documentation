@@ -37,8 +37,8 @@ conversion:
 
 .. code-block:: bash
    
-   convertTDFtoMzML.py --help
-   convertTDFtoMzML.py -a=input.d -o=output.mzML
+   diapysef converttdftomzml --help
+   diapysef converttdftomzml --in=input.d --out=output.mzML
 
  
 Library Generation

@@ -95,11 +95,10 @@ The OpenSWATH Workflow
    :maxdepth: 3
    :caption: Mobi-DIK (diaPASEF)
    
-   docs/mobi-dik
-   docs/dataconversion
-   docs/installation
-   docs/librarygeneration
-   docs/openswath_mobidik
+   docs/mobidik/mobi-dik
+   docs/mobidik/dataconversion
+   docs/mobidik/librarygeneration
+   docs/mobidik/openswath_mobidik
 
 .. toctree::
    :maxdepth: 3
