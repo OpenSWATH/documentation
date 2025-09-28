@@ -3,7 +3,7 @@ OpenSWATH
 
 Overview
 --------
-OpenSWATH [1]_ is a proteomics software that allows analysis of LC-MS/MS DIA (data independent acquisition) data using the approach described by Gillet et al. [2]_ and implemented as part of OpenMS [3]_. The original SWATH-MS method uses 32 cycles to iterate through precursor ion windows from 400-426 Da to 1175-1201 Da and at each step acquire a complete, multiplexed fragment ion spectrum of all precursors present in that window. After 32 fragmentations (or 3.2 seconds), the cycle is restarted and the first window (400-426 Da) is fragmented again, thus delivering complete "snapshots" of all fragments of a specific window every 3.2 seconds.
+OpenSWATH [1]_ is a proteomics software that allows analysis of LC-MS/MS DIA (data independent acquisition) data using the approach described by Gillet et al. [2]_, as well as diaPASEF as described by Florian et al. [7]_ and implemented as part of OpenMS [3]_. The original SWATH-MS method uses 32 cycles to iterate through precursor ion windows from 400-426 Da to 1175-1201 Da and at each step acquire a complete, multiplexed fragment ion spectrum of all precursors present in that window. After 32 fragmentations (or 3.2 seconds), the cycle is restarted and the first window (400-426 Da) is fragmented again, thus delivering complete "snapshots" of all fragments of a specific window every 3.2 seconds.
 
 The analysis approach described by Gillet et al. extracts ion traces of specific fragment ions from all MS2 spectra that have the same precursor isolation window, thus generating data that is very similar to SRM traces.
 
@@ -16,7 +16,7 @@ associated `dataset <http://www.peptideatlas.org/PASS/PASS00779>`_.
 
 The OpenSwathWorkflow implements the OpenSWATH analysis workflow as described
 in [1]_ and provides a complete, integrated analysis tool without the need to 
-run multiple tools consecutively.
+run multiple tools consecutively. The OpenSwathWorkflow was extended to handle the ion mobility dimension for diaPASEF data as described in [7]_.
 
 It executes the following steps in order:
 
@@ -240,3 +240,4 @@ References
 
 .. [6] Navarro P, Kuharev J, Gillet LC, Bernhardt OM, MacLean B, Röst HL, Tate SA, Tsou CC, Reiter L, Distler U, Rosenberger G, Perez-Riverol Y, Nesvizhskii AI, Aebersold R, Tenzer S.  A multicenter study benchmarks software tools for label-free proteome quantification.  Nat Biotechnol. 2016 Nov;34(11):1130-1136. doi: 10.1038/nbt.3685. Epub 2016 Oct 3.
 
+.. [7] Florian Meier, Andreas-David Brunner, Max Frank, Annie Ha, Eugenia Voytik, Stephanie Kaspar-Schoenefeld, Markus Lubeck, Oliver Raether, Ruedi Aebersold, Ben C. Collins, Hannes L. Röst, Matthias Mann. diaPASEF: parallel accumulation–serial fragmentation combined with data-independent acquisition. Nature Methods volume 17, pages 1229–1236 (2020). doi: https://www.nature.com/articles/s41592-020-00998-0

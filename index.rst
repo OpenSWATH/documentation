@@ -54,6 +54,7 @@ The OpenSWATH Workflow
    :caption: Spectral library generation
    
    docs/generic
+   docs/fragpipe
    docs/tpp
    docs/skyline
    docs/swathatlas
