@@ -4,8 +4,8 @@ Generic Calibration Transition Lists
 Overview
 --------
 
-OpenSWATH [1]_ supports generic calibration transition lists in tab- or comma-separated value (TSV/CSV) and sqlite-based (PQP) formats. ``TargetedFileConverter`` is part of `OpenMS
-<http://www.openms.org>`_ [2]_ and is available for Windows, macOS and Linux.
+OpenSWATH supports generic calibration transition lists in tab- or comma-separated value (TSV/CSV) and sqlite-based (PQP) formats. ``TargetedFileConverter`` is part of `OpenMS
+<http://www.openms.org>`_ and is available for Windows, macOS and Linux.
 
 Contact and Support
 -------------------
@@ -26,6 +26,6 @@ Parker et al. identified a set of peptide sequences (113) that are conserved acr
 
 References
 ----------
-
 .. [1] https://biognosys.com/product/irt-kit/
+
 .. [2] Parker Sarah J., Röst Hannes L., Rosenberger George, et al. Identification of a Set of Conserved Eukaryotic Internal Retention Time Standards for Data-independent Acquisition Mass Spectrometry. Molecular and Cellular Proteomics Volume 14, Issue 10, Pages 2800-2813 (2015). doi: https://doi.org/10.1074/mcp.O114.042267

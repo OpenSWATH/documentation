@@ -6,8 +6,8 @@ Overview
 
 Run-specific transition lists can be generated from search results of pseudo-DDA data (e.g. from DIA-Umpire or diaTracer) derived from the same DIA raw files. This approach can be used to improve the calibration of retention time, mass-to-charge and ion mobility values for each individual run. 
 
-OpenSWATH [1]_ supports generic calibration transition lists in tab- or comma-separated value (TSV/CSV) and sqlite-based (PQP) formats. ``OpenSwathAssayGenerator`` is part of `OpenMS
-<http://www.openms.org>`_ [2]_ and is available for Windows, macOS and Linux.
+OpenSWATH supports generic calibration transition lists in tab- or comma-separated value (TSV/CSV) and sqlite-based (PQP) formats. ``OpenSwathAssayGenerator`` is part of `OpenMS
+<http://www.openms.org>`_ and is available for Windows, macOS and Linux.
 
 Contact and Support
 -------------------
