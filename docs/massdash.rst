@@ -21,12 +21,12 @@ can contact the authors `Justin Sing <https://singjc.github.io/>`_ and `Joshua C
 Installation
 ------------
 
-See the `GitHub README Installation instructions <https://github.com/Roestlab/massdash?tab=readme-ov-file#recommended-pip-installation>`.
+See the `GitHub README Installation instructions <https://github.com/Roestlab/massdash?tab=readme-ov-file#recommended-pip-installation>`_.
 
 Tutorial
 --------
 
-A tutorial is available on the ReadTheDocs documentation page for the `GUI <https://massdash.readthedocs.io/en/latest/GUI.html>` and the `Python inteface <https://massdash.readthedocs.io/en/latest/Python%20Interface.html>`.
+A tutorial is available on the ReadTheDocs documentation page for the `GUI <https://massdash.readthedocs.io/en/latest/GUI.html>`_ and the `Python inteface <https://massdash.readthedocs.io/en/latest/Python%20Interface.html>`_.
 
 References
 ----------
