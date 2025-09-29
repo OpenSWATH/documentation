@@ -64,9 +64,9 @@ When using the IPF extension, the parameter ``--level`` can be set to ``ms2``, `
 
 .. code-block:: bash
 
-   pyprophet score --in=merged.osw --level=ms1 \
-   score --in=merged.osw --level=ms2 \
-   score --in=merged.osw --level=transition
+   pyprophet score --in=merged.osw --level=ms1 
+   pyprophet score --in=merged.osw --level=ms2 
+   pyprophet score --in=merged.osw --level=transition
 
 The scoring steps on MS1 and transition-level have some dependencies on the MS2 peak group signals. The parameter ``--ipf_max_peakgroup_rank`` specifies how many peak group candidates should be assessed in IPF. For example, if this parameter is set to 1, only the top scoring peak group will be investigated. In some scenarios, a set of peptide query parameters might detect several peak groups of different peptidoforms that should be independently identified. If the parameter is set to 3, the top 3 peak groups are investigated. Note that for higher values (or very generic applications), it might be a better option to disable the PyProphet assumption of a single best peak group per peptide query. This can be conducted by setting ``--group_id`` to ``feature_id`` and will change the assumption that all high scoring peak groups are potential peptide signals.
 
