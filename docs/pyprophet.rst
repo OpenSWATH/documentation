@@ -17,8 +17,8 @@ We provide support for PyProphet on the `GitHub repository
 You can contact the authors `Uwe Schmitt
 <https://www.ethz.ch/services/en/organisation/departments/it-services/people/person-detail.html?persid=204514>`_, `Johan Teleman
 <https://github.com/fickludd>`_, `Hannes Röst
-<http://www.hroest.ch>`_ and `George Rosenberger
-<http://www.rosenberger.pro>`_.
+<http://www.hroest.ch>`_, `George Rosenberger
+<http://www.rosenberger.pro>`_ and `Justin Sing <https://singjc.github.io/>`_.
 
 Tutorial
 --------
@@ -31,14 +31,14 @@ Generate ``OSW`` output files according to section :doc:`openswath_workflow`. Py
 .. code-block:: bash
 
    pyprophet --help
-   pyprophet merge --help
+   pyprophet merge osw --help
 
    
 This command provides an overview of all available commands to manipulate OSW input files. Further instructions are available for the individual commands.
 
 .. code-block:: bash
 
-   pyprophet merge --template=library.pqp --out=merged.osw *.osw
+   pyprophet merge osw --template=library.pqp --out=merged.osw *.osw
 
 In most scenarios, more than a single DIA / SWATH-MS run was acquired and the samples should be compared qualitatively and/or quantitatively with the OpenSWATH workflow. After individual processing with OpenSWATH and the identical spectral library, the files can be merged by PyProphet.
 
@@ -79,7 +79,7 @@ If IPF should be applied after scoring, the following command can be used:
 
 .. code-block:: bash
 
-   pyprophet ipf --in=merged.osw
+   pyprophet infer peptidoform --in=merged.osw
 
 To adjust the IPF-specific parameters, please consult ``pyprophet ipf --help``. If MS1 or MS2 precursor data should not be used, e.g. due to poor instrument performance, this can be disabled by setting ``--no-ipf_ms1_scoring`` and ``--no-ipf_ms2_scoring``. The experimental setting ``--ipf_grouped_fdr`` can be used in case of extremly heterogeneous spectral library, e.g. containing mostly unmodified peptides that are mainly detect and peptidoforms with various potential site-localizations, which are mostly not detectable. This parameter will estimate the FDR independently grouped according to number of site-localizations.
 
@@ -92,9 +92,9 @@ To conduct peptide inference in run-specific, experiment-wide and global context
 
 .. code-block:: bash
 
-   pyprophet peptide --in=merged.osw --context=run-specific \
-   peptide --in=merged.osw --context=experiment-wide \
-   peptide --in=merged.osw --context=global
+   pyprophet infer peptide --in=merged.osw --context=run-specific 
+   pyprophet infer peptide --in=merged.osw --context=experiment-wide 
+   pyprophet infer peptide --in=merged.osw --context=global
 
 This will generate individual PDF reports and store the scores in a non-redundant fashion in the OSW file.
 
@@ -102,9 +102,9 @@ Analogously, this can be conducted on protein-level as well:
 
 .. code-block:: bash
 
-   pyprophet protein --in=merged.osw --context=run-specific \
-   protein --in=merged.osw --context=experiment-wide \
-   protein --in=merged.osw --context=global
+   pyprophet infer protein --in=merged.osw --context=run-specific 
+   pyprophet infer protein --in=merged.osw --context=experiment-wide 
+   pyprophet infer protein --in=merged.osw --context=global
 
 Exporting
 ~~~~~~~~~
@@ -113,7 +113,7 @@ Finally, we can export the results to legacy OpenSWATH TSV report:
 
 .. code-block:: bash
 
-   pyprophet export --in=merged.osw --out=legacy.tsv
+   pyprophet export tsv --in=merged.osw --out=legacy.tsv
 
 By default, both peptide- and transition-level quantification is reported, which is necessary for requantification or ``SWATH2stats``. If peptide and protein inference in the global context was conducted, the results will be filtered to 1% FDR by default. Further details can be found by ``pyprophet export --help``.
 
@@ -137,7 +137,7 @@ In the first step, we will generate a subsampled classifer that is much faster t
    pyprophet subsample --in=$run --out=$run_subsampled --subsample_ratio=0.1
    done
    
-   pyprophet merge --template=library.pqp --out=model.osw *.osws
+   pyprophet merge osw --template=library.pqp --out=model.osw *.osws
  
 We then learn a classifer on MS1/MS2-level and store the results in ``model.osw``:
  
@@ -168,11 +168,11 @@ Next, global peptide and protein-level error rate control is conducted by mergin
 
 .. code-block:: bash
  
- pyprophet merge --template=model.osw --out=model_global.osw *.oswr
+ pyprophet merge osw --template=model.osw --out=model_global.osw *.oswr
 
- pyprophet peptide --context=global --in=model_global.osw
+ pyprophet infer peptide --context=global --in=model_global.osw
  
- pyprophet protein --context=global --in=model_global.osw
+ pyprophet infer protein --context=global --in=model_global.osw
  
 Now we backpropagate the global statistics to the individual runs:
 
@@ -189,7 +189,7 @@ We can then export the results with confidence scores on peptide-query-level (ru
 
  for run in run_*.osw
  do
- pyprophet export --in=$run
+ pyprophet export tsv --in=$run
  done
 
 References
