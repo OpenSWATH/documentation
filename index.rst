@@ -62,6 +62,13 @@ The OpenSWATH Workflow
 
 .. toctree::
    :maxdepth: 3
+   :caption: Calibration libraries
+   
+   docs/calibration/generic
+   docs/calibration/run_specific
+
+.. toctree::
+   :maxdepth: 3
    :caption: Targeted data extraction
    
    docs/openswath
