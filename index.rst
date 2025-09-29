@@ -85,6 +85,8 @@ The OpenSWATH Workflow
    :caption: Multi-run alignment
    
    docs/tric
+   docs/dialignr
+   docs/arycal
 
 .. toctree::
    :maxdepth: 3
@@ -97,6 +99,7 @@ The OpenSWATH Workflow
    :caption: Chromatogram visualization
    
    docs/tapir
+   docs/massdash
 
 .. toctree::
    :maxdepth: 3
