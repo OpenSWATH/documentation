@@ -270,12 +270,17 @@ Streptococcus pyogenes
 HeLa Evosep diaPASEF data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - HeLa_Evosep_diaPASEF_RAW.zip 
+  
   - 60SPD_py8: 3 tdf raw files (200ng HeLa)
   - 100SPD_py8: 3 tdf raw files (100ng HeLa)
   - 200SPD_py8: 3 tdf raw files (200ng HeLa)
+  
 - HeLa_Evosep_pqp_library.zip 
+  
   - 200623_hela_evosep_fractions_library_ptypic_decoy.pqp
+  
 - HeLa_Evosep_pyprophet_export.zip
+  
   - pyprophet_export_60SPD.tsv
   - pyprophet_export_100SPD.tsv
   - pyprophet_export_200SPD.tsv
