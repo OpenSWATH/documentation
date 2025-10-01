@@ -60,7 +60,7 @@ To analyze diaPASEF data with OpenSwath, a spectral library is required. This ca
 
 .. note::
 
-    If you prefer a GUI, you can also use `FragPipe <https://fragpipe.nesvilab.org/>`_ to generate the spectral library. FragPipe provides an integrated environment for running MSFragger, PeptideProphet, iProphet, and EasyPQP. See the :doc:fragpipe section.
+    If you prefer a GUI, you can also use `FragPipe <https://fragpipe.nesvilab.org/>`_ to generate the spectral library. FragPipe provides an integrated environment for running diaTracer, MSFragger, PeptideProphet/Percolator, iProphet, and EasyPQP. See the :doc:`fragpipe` section.
 
 .. note::
 
