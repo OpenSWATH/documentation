@@ -140,7 +140,7 @@ Therefore, a full run of OpenSWATH may look like this:
 
 .. tabs::
 
-   .. tab:: DIA
+    .. tab:: DIA
  
         .. code-block:: bash
 
