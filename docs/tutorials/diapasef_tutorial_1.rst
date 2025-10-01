@@ -489,8 +489,9 @@ Since we added addition outputs for debugging the calibration, we can inspect th
 
     wd=$PWD
     cd openswath/calibration/
-    
+    # Generate calibration report 
     pyprophet export calibration-report 
+    cd $wd
 
 We would expect output similar to the following:
 
