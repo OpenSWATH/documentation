@@ -7,18 +7,20 @@ For this tutorial, we are using publicly available data from the publication:
 We will perform the following steps in this tutorial:
 
 1. Spectral library generation using
+   
    * Generating pseudo-spectra using diaTracer
    * Search pseudo-spectra using MSFragger
    * Validate PSMs using PeptideProphet and iProphet
    * Generate Spectral Library using EasyPQP
    * Generate Run-Specific iRT libraries
+
 2. Targeted Data Extraction using OpenSwathWorkflow
 3. Statistical Scoring and FDR Control using PyProphet
 
 Data
 ----
 
-The dataset is deposited in PRIDE under accession [PXD017703](https://www.ebi.ac.uk/pride/archive/projects/PXD017703).  
+The dataset is deposited in PRIDE under accession `PXD017703 <https://www.ebi.ac.uk/pride/archive/projects/PXD017703>_.  
 Specifically, we will work with the **HeLa_Evosep_diaPASEF_RAW.zip** experiment, focusing on the `200SPD_py8` experiment.
 
 You should see the following files when you download and unzip the data (assuming you are in the ``HeLa_Evosep_diaPASEF_RAW/200SPD_py8`` directory):
@@ -77,7 +79,7 @@ Generating pseudo-spectra using diaTracer
 Search pseudo-spectra using MSFragger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can retrieve a suitable fasta file from the [UniProt website](https://www.uniprot.org/proteomes/UP000005640) (Human reference proteome). Make sure to include common contaminants and reverse decoys in the fasta file. For the following tutorial, we use the following `fasta file <https://github.com/OpenSWATH/workflows/blob/master/data_library/library.fasta>`_.
+You can retrieve a suitable fasta file from the `UniProt website <https://www.uniprot.org/proteomes/UP000005640>`_ (Human reference proteome). Make sure to include common contaminants and reverse decoys in the fasta file. For the following tutorial, we use the following `fasta file <https://github.com/OpenSWATH/workflows/blob/master/data_library/library.fasta>`_.
 If your fasta file does not contain decoys, you can generate and append a decoy database using OpenMS's DecoyDatabase tool.
 
 .. code-block:: bash
@@ -252,6 +254,7 @@ If your fasta file does not contain decoys, you can generate and append a decoy 
         add_U_user_amino_acid = 0.0
         add_X_user_amino_acid = 0.0
         add_Z_user_amino_acid = 0.0
+
 
 Validate PSMs using PeptideProphet
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -521,7 +524,7 @@ We would expect output similar to the following:
 
 The resulting ``calibration_report.pdf`` file contains scatter plots showing the correlation between the observed and expected values for retention time (iRT), mass-to-charge ratio (m/z), and ion mobility (IM). Additionally, it includes a few sample extracted ion chromatograms (XICs) for the iRT peptides used in the calibration process.
 
-.. image:: img/calibration_report.png
+.. image:: ../img/calibration_report.png
 
 .. Feature Linking using ARYCAL
 .. -------------------------------
