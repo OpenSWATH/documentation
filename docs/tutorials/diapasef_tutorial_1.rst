@@ -56,7 +56,15 @@ Make sure these tools are available in your PATH before proceeding.
 Spectral Library Generation
 ---------------------------
 
-To analyze diaPASEF data, a spectral library is required. This can be generated using any of the tools mentioned in the `Spectral library generation <../spectral_library_generation.html>`_ section. For this tutorial, we will use a spectral library generated using pseudo-spectra generated from diaTracer and using MSFragger for spectra database searching.
+To analyze diaPASEF data with OpenSwath, a spectral library is required. This can be generated using any of the tools mentioned in the `Spectral library generation <../spectral_library_generation.html>`_ section. For this tutorial, we will use a spectral library generated using pseudo-spectra generated from diaTracer and using MSFragger for spectra database searching.
+
+.. note::
+
+    If you prefer a GUI, you can also use `FragPipe <https://fragpipe.nesvilab.org/>`_ to generate the spectral library. FragPipe provides an integrated environment for running MSFragger, PeptideProphet, iProphet, and EasyPQP. See the :doc:fragpipe section.
+
+.. note::
+
+    In this tutorial, we are only using diaPASEF data. However, if you have ddaPASEF data as well, you can create a consensus library using both ddaPASEF and the pseudo-spectra from diaPASEF. 
 
 Generating pseudo-spectra using diaTracer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
