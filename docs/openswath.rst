@@ -126,12 +126,12 @@ software comparison paper [7]_.
 Ion Mobility parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are analyzing diaPASEF data, you can adjust the ion mobility extraction window using ``-ion_mobility_window``. In addition to using the iRT peptides for correction of the retention time space and the m/z space, OpenSWATH can also use those peptides to correct the ion mobility space with the option ``-Calibration:im_correction_function linear``. To include ion mobility feature scores, set the ``-Scoring:Scores:use_ion_mobility_scores`` flag.
+If you are analyzing diaPASEF data, you can adjust the ion mobility extraction window using ``-ion_mobility_window``. In addition to using the iRT peptides for correction of the retention time space and the m/z space, OpenSWATH can also use those peptides to correct the ion mobility space with the option ``-Calibration:im_correction_function linear``. To include ion mobility feature scores, set the ``-Scoring:Scores:use_ion_mobility_scores`` flag. It is also good to set the ``-pasef`` to explicitly tell OpenSwath the data is diaPASEF data.
 
 MS1 and IPF parameters
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Furthermore, if you wish to use MS1 information, use the ``-use_ms1_traces`` flag, assuming that your input data contains an MS1 map in addition to the SWATH data. This is generally recommended. If you would like to enable IPF transition-level scoring and your spectral library was generated according to the IPF instructions, you should set the ``-enable_uis_scoring`` flag.
+Furthermore, if you wish to use MS1 information, use the ``-enable_ms1 true`` flag, assuming that your input data contains an MS1 map in addition to the SWATH data. This is generally recommended. If you would like to enable IPF transition-level scoring and your spectral library was generated according to the IPF instructions, you should set the ``-enable_ipf true`` flag and the ``-Scoring:Scores:use_uis_scores`` to use unique ion signature scores for peptidoform identification.
 
 Example
 ~~~~~~~
