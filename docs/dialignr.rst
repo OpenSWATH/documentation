@@ -18,7 +18,7 @@ You can contact the author `Shubham Gupta
 
 Tutorial
 --------
-DIAlignR provides a `vignette <https://htmlpreview.github.io/?https://github.com/shubham1637/DIAlignR/master/vignettes/DIAlignR-vignette.html>`_ that explains the installation and usage of the package. You can also find more full extensive examples of the data analysis from [1]_ and [2]_ on the `GitHub wiki <https://github.com/shubham1637/DIAlignR/wiki>`.
+DIAlignR provides a `vignette <https://htmlpreview.github.io/?https://github.com/shubham1637/DIAlignR/master/vignettes/DIAlignR-vignette.html>`_ that explains the installation and usage of the package. You can also find more full extensive examples of the data analysis from [1]_ and [2]_ on the `GitHub wiki <https://github.com/shubham1637/DIAlignR/wiki>`_.
 
 References
 ----------
