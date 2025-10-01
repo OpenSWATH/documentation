@@ -140,7 +140,7 @@ Therefore, a full run of OpenSWATH may look like this:
 
 .. tabs::
 
-    .. code-tab:: DIA
+    .. code-tab:: bash DIA
 
         OpenSwathWorkflow.exe
         -in data.mzML -tr library.tsv
@@ -162,7 +162,7 @@ Therefore, a full run of OpenSWATH may look like this:
         -RTNormalization:alignmentMethod linear
         -Scoring:stop_report_after_feature 5
 
-    .. code-tab:: diaPASEF
+    .. code-tab:: bash diaPASEF
 
         OpenSwathWorkflow.exe
         -in data.mzML -tr library.tsv
