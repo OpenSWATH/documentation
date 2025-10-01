@@ -153,11 +153,6 @@ Therefore, a full run of OpenSWATH may look like this:
         -mz_extraction_window 50 
         -mz_extraction_window_unit ppm
         -mz_correction_function quadratic_regression_delta_ppm
-        -ion_mobility_window 0.06 
-        -im_extraction_window_ms1 0.06 
-        -irt_mz_extraction_window 40 
-        -irt_mz_extraction_window_unit ppm 
-        -irt_im_extraction_window 0.2
         -TransitionGroupPicker:background_subtraction original
         -RTNormalization:alignmentMethod linear
         -Scoring:stop_report_after_feature 5
@@ -177,7 +172,11 @@ Therefore, a full run of OpenSWATH may look like this:
         -mz_extraction_window_ms1 25 
         -mz_extraction_window_ms1_unit ppm 
         -mz_correction_function quadratic_regression_delta_ppm
-        -ion_mobility_window 0.06
+        -ion_mobility_window 0.06 
+        -im_extraction_window_ms1 0.06 
+        -irt_mz_extraction_window 40 
+        -irt_mz_extraction_window_unit ppm 
+        -irt_im_extraction_window 0.2
         -Calibration:im_correction_function linear
         -Scoring:Scores:use_ion_mobility_scores true
         -TransitionGroupPicker:background_subtraction original
