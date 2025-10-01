@@ -26,7 +26,7 @@ Tutorial
 Merging
 ~~~~~~~
 
-Generate ``OSW`` output files according to section :doc:`openswath_workflow`. PyProphet is then applied to one or several such SQLite-based reports. Several different commands can be run to consecutively do the analysis:
+Generate ``OSW`` output files according to section :doc:`openswath`. PyProphet is then applied to one or several such SQLite-based reports. Several different commands can be run to consecutively do the analysis:
 
 .. code-block:: bash
 
