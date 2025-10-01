@@ -115,6 +115,12 @@ The OpenSWATH Workflow
    :caption: Differential expression analysis
    
    docs/swath2stats
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Tutorials
+   
+   docs/tutorials/diapasef_tutorial_1
    
 Acknowledgments
 ---------------
