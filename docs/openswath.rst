@@ -56,6 +56,8 @@ The input file ``in`` is generally a single ``mzML``, ``mzXML`` or ``sqMass`` fi
 
 .. note:: If your data has been acquired using a staggered SWATH acquisition scheme, you will need to add a filter in msconvert to **demultiplex** the data with optimization set to **Overlap Only**. 
 
+.. note:: If your data was acquired on a timsTOF for **diaPASEF** data, then you need to use the ``diapysef converttdftomzml`` python tool to convert the raw data to mzML format. See the :doc:`mobidik/dataconversion` section for more details.
+
 Spectral library
 ~~~~~~~~~~~~~~~~
 
@@ -121,6 +123,11 @@ quantification, it can be beneficial to enable background subtraction using
 ``-TransitionGroupPicker:background_subtraction original`` as described in the
 software comparison paper [6]_.
 
+Ion Mobility parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are analyzing diaPASEF data, you can adjust the ion mobility extraction window using ``-ion_mobility_window``. In addition to using the iRT peptides for correction of the retention time space and the m/z space, OpenSWATH can also use those peptides to correct the ion mobility space with the option ``-Calibration:im_correction_function linear``. To include ion mobility feature scores, set the ``-Scoring:Scores:use_ion_mobility_scores`` flag.
+
 MS1 and IPF parameters
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -146,7 +153,7 @@ Therefore, a full run of OpenSWATH may look like this:
     -TransitionGroupPicker:background_subtraction original
     -RTNormalization:alignmentMethod linear
     -Scoring:stop_report_after_feature 5
-    -out_tsv osw_output.tsv
+    -out_features osw_output.osw
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
@@ -168,15 +175,14 @@ The OpenSwathWorkflow produces two types of output:
 - extracted chromatograms
 
 
-the identified peaks can be stored in tsv format using ``-out_tsv``
-(recommended), in SQLite format using ``-out_osw`` (experimental) or in a
-featureXML format using ``-out_features`` (not recommended).
+the identified peaks can be stored in in SQLite format (*osw*) using or in a
+XML format ( *featureXML*, not recommended) using the `-out_features` flag. The file type will be determined by the file extension. 
 
 the extracted chromatograms can be stored in mzML format using ``out_chrom``
 with an ``.mzML`` extension. By default the produced mzML file will be numpress
 compressed, but can be converted to regular mzML using the OpenMS
 ``FileConverter``. Alternatively, output can be written in ``.sqMass`` format,
-which is a SQLite-based format (experimental).
+which is a SQLite-based format.
 
 Tutorial Data
 -------------
