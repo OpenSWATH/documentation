@@ -1,4 +1,4 @@
-MOBI-DIK Data Conversion
+diaPASEF TDF Data Conversion
 ========================
 
 For the Mobi-DIK workflow, the generated .tdf files from diaPASEF runs can be
