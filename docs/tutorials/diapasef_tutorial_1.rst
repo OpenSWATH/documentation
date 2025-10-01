@@ -2,7 +2,7 @@ Analysis of diaPASEF Data
 =========================
 
 For this tutorial, we are using publicly available data from the publication:  
-[*Meier et al., Nature Methods (2020)*](https://www.nature.com/articles/s41592-020-00998-0#Sec10). 
+`*Meier et al., Nature Methods (2020)* <https://www.nature.com/articles/s41592-020-00998-0#Sec10>`_. 
 
 We will perform the following steps in this tutorial:
 
@@ -20,7 +20,7 @@ We will perform the following steps in this tutorial:
 Data
 ----
 
-The dataset is deposited in PRIDE under accession `PXD017703 <https://www.ebi.ac.uk/pride/archive/projects/PXD017703>_.  
+The dataset is deposited in PRIDE under accession `PXD017703 <https://www.ebi.ac.uk/pride/archive/projects/PXD017703>`_.  
 Specifically, we will work with the **HeLa_Evosep_diaPASEF_RAW.zip** experiment, focusing on the `200SPD_py8` experiment.
 
 You should see the following files when you download and unzip the data (assuming you are in the ``HeLa_Evosep_diaPASEF_RAW/200SPD_py8`` directory):
@@ -37,14 +37,18 @@ Software requirements
 To follow along, you will need the following software installed:
 
 - **Java** (≥ v1.8) for running diaTracer and MSFragger
+  
   - **diaTracer** (≥ v1.3.3) for generating pseudo-spectra from diaPASEF data
   - **msfragger** (≥ v4.3) for proteomics database searching
+  
 - **TPP** (≥ v7.2.0) for PSM validation using PeptideProphet and iProphet
 - **OpenMS** (≥ v3.4) for various data processing steps including spectral library generation and running OpenSwathWorkflow
 - **Python** (≥ 3.10) with the following packages:
+
   - `easypqp (≥ v0.1.53)` (for spectral library generation)
   - `diapysef (≥ v1.0.10)` (for spectral library generation)
   - `pyprophet (≥ v3.0.1)` (for statistical scoring and FDR control)
+  
 - **Docker** (optional) if you prefer running the tools in a containerized environment  
 
 Make sure these tools are available in your PATH before proceeding.
