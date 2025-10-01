@@ -138,22 +138,58 @@ Example
 
 Therefore, a full run of OpenSWATH may look like this:
 
-.. code-block:: bash
+.. tabs::
 
-    OpenSwathWorkflow.exe
-    -in data.mzML -tr library.tsv
-    -tr_irt iRT_assays.TraML
-    -swath_windows_file SWATHwindows_analysis.tsv
-    -sort_swath_maps -batchSize 1000
-    -readOptions cacheWorkingInMemory -tempDirectory C:\Temp
-    -use_ms1_traces
-    -mz_extraction_window 50 
-    -mz_extraction_window_unit ppm
-    -mz_correction_function quadratic_regression_delta_ppm
-    -TransitionGroupPicker:background_subtraction original
-    -RTNormalization:alignmentMethod linear
-    -Scoring:stop_report_after_feature 5
-    -out_features osw_output.osw
+   .. tab:: DIA
+ 
+        .. code-block:: bash
+
+            OpenSwathWorkflow.exe
+            -in data.mzML -tr library.tsv
+            -tr_irt iRT_assays.TraML
+            -swath_windows_file SWATHwindows_analysis.tsv
+            -out_features osw_output.osw
+            -sort_swath_maps -batchSize 1000
+            -readOptions cacheWorkingInMemory -tempDirectory C:\Temp
+            -rt_extraction_window 600
+            -mz_extraction_window 50 
+            -mz_extraction_window_unit ppm
+            -mz_correction_function quadratic_regression_delta_ppm
+            -ion_mobility_window 0.06 
+            -im_extraction_window_ms1 0.06 
+            -irt_mz_extraction_window 40 
+            -irt_mz_extraction_window_unit ppm 
+            -irt_im_extraction_window 0.2
+            -TransitionGroupPicker:background_subtraction original
+            -RTNormalization:alignmentMethod linear
+            -Scoring:stop_report_after_feature 5
+
+    .. tab:: diaPASEF
+
+        .. code-block:: bash
+
+            OpenSwathWorkflow.exe
+            -in data.mzML -tr library.tsv
+            -tr_irt iRT_assays.TraML
+            -out_features osw_output.osw
+            -sort_swath_maps -batchSize 1000
+            -readOptions cacheWorkingInMemory -tempDirectory C:\Temp
+            -pasef -force
+            -rt_extraction_window 250
+            -mz_extraction_window 25 
+            -mz_extraction_window_unit ppm
+            -mz_extraction_window_ms1 25 
+            -mz_extraction_window_ms1_unit ppm 
+            -mz_correction_function quadratic_regression_delta_ppm
+            -ion_mobility_window 0.06
+            -Calibration:im_correction_function linear
+            -Scoring:Scores:use_ion_mobility_scores true
+            -TransitionGroupPicker:background_subtraction original
+            -RTNormalization:estimateBestPeptides
+            -RTNormalization:alignmentMethod lowess
+            -RTNormalization:lowess:span 0.01 
+            -Scoring:stop_report_after_feature 5
+            -Scoring:Scores:use_ion_mobility_scores 
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
