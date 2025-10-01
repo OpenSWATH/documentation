@@ -176,7 +176,7 @@ The OpenSwathWorkflow produces two types of output:
 
 
 the identified peaks can be stored in in SQLite format (*osw*) using or in a
-XML format ( *featureXML*, not recommended) using the `-out_features` flag. The file type will be determined by the file extension. 
+XML format ( *featureXML*, not recommended) using the ``out_features`` flag. The file type will be determined by the file extension (either ``.osw`` or ``.featureXML``). 
 
 the extracted chromatograms can be stored in mzML format using ``out_chrom``
 with an ``.mzML`` extension. By default the produced mzML file will be numpress
