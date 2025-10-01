@@ -19,6 +19,22 @@ Instructions for compilation and installation can be obtained from the `OpenMS
 documentation
 <http://ftp.mi.fu-berlin.de/pub/OpenMS/release-documentation/html/index.html>`_.
 
+EasyPQP
+-------
+
+EasyPQP requires Python 3. Windows users should install
+Anaconda. Mac and Linux users should be able to install PyProphet directly from
+GitHub. It is strongly recommended to install PyProphet within a `virtualenv
+<https://virtualenv.pypa.io/en/stable/userguide/>`_.
+
+.. code-block:: bash
+   
+   # Install PyProphet release version
+   pip install easypqp
+
+   # Alternative: Install PyProphet development version
+   pip install git+https://github.com/grosenberger/easypqp.git@master
+
 PyProphet
 ---------
 

@@ -19,6 +19,14 @@ Instructions for compilation and installation can be obtained from the `OpenMS
 documentation
 <http://ftp.mi.fu-berlin.de/pub/OpenMS/release-documentation/html/index.html>`_.
 
+EasyPQP
+---------
+Please obtain the latest version of EasyPQP from `GitHub
+<https://github.com/grosenberger/easypqp>`_.
+
+The instructions for the installation of the EasyPQP :doc:`binaries` is
+applicable here as well.
+
 PyProphet
 ---------
 Please obtain the latest version of PyProphet from `GitHub
