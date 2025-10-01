@@ -46,7 +46,7 @@ To follow along, you will need the following software installed:
 - **Python** (≥ 3.10) with the following packages:
 
   - `easypqp (≥ v0.1.53)` (for spectral library generation)
-  - `diapysef (≥ v1.0.10)` (for spectral library generation)
+  - `diapysef (≥ v1.0.10)` (for Bruker tdf file conversion)
   - `pyprophet (≥ v3.0.1)` (for statistical scoring and FDR control)
   
 - **Docker** (optional) if you prefer running the tools in a containerized environment  
