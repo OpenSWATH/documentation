@@ -203,6 +203,8 @@ PeptideAtlas raw data repository with accession number
 The Skyline results are available from `Skyline Panorama Webserver
 <https://daily.panoramaweb.org/labkey/project/Aebersold/rosenberger/OpenSWATH_SGS/begin.view>`_.
 
+The HeLa Evosep diaPASEF data is available from the `*Meier et al., Nature Methods (2020)* <https://www.nature.com/articles/s41592-020-00998-0#Sec10>`_ publication is available from the PRIDE repository with accession number `PXD017703 <https://www.ebi.ac.uk/pride/archive/projects/PXD017703>`_.
+
 Mycobacterium tuberculosis data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -231,6 +233,19 @@ Streptococcus pyogenes
 - *S. pyo* TraML assay library
 - *S. pyo* OpenSWATH results
 - *S. pyo* summary results
+
+HeLa Evosep diaPASEF data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- HeLa_Evosep_diaPASEF_RAW.zip 
+  - 60SPD_py8: 3 tdf raw files (200ng HeLa)
+  - 100SPD_py8: 3 tdf raw files (100ng HeLa)
+  - 200SPD_py8: 3 tdf raw files (200ng HeLa)
+- HeLa_Evosep_pqp_library.zip 
+  - 200623_hela_evosep_fractions_library_ptypic_decoy.pqp
+- HeLa_Evosep_pyprophet_export.zip
+  - pyprophet_export_60SPD.tsv
+  - pyprophet_export_100SPD.tsv
+  - pyprophet_export_200SPD.tsv
 
 References
 ----------
