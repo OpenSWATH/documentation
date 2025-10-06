@@ -14,7 +14,7 @@ package for converting diaPASEF data from vendor format to open mzML format.
    :target: https://www.nature.com/articles/s41592-020-00998-0/figures/3
    :align: center
 
-   Mobi-DIK workflow for targeted data extraction from diaPASEF data. Image adapted from figure 3 from Meir. et al. (2020) [3]_.
+   Mobi-DIK workflow for targeted data extraction from diaPASEF data. Image adapted from figure 3 from Meier. et al. (2020) [3]_.
 
 Contact and Support
 -------------------
