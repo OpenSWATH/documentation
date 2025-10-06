@@ -29,6 +29,7 @@ The following columns are required:
 - ``ProductMz`` * (float; synonyms: FragmentMz)
 - ``LibraryIntensity`` * (float; synonyms: RelativeFragmentIntensity)
 - ``NormalizedRetentionTime`` * (float; synonyms: RetentionTime, Tr_recalibrated, iRT, RetentionTimeCalculatorScore) (normalized retention time)
+- ``PrecursorIonMobility`` * (float; applicable only for ion mobility coupled data, diaPASEF)
 
 Targeted Proteomics Columns
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

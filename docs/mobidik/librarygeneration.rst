@@ -1,4 +1,4 @@
-Library Generation
+Legacy Library Generation (diaPASEF)
 ==================
 
 For most data-independent acquisition (DIA) analysis, a well-represented 

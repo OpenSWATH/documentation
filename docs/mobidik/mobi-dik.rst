@@ -4,18 +4,25 @@ Mobi-DIK
 Overview
 --------
 
-Mobi-DIK (Ion Mobility DIA Tool-Kit) is a package for analysis of DIA data
-coupled to ion mobility. Mobi-DIK is an extension of the OpenSWATH workflow [1]_
+Mobi-DIK (Ion Mobility DIA Tool-Kit) is a workflow for the analysis of DIA data
+coupled with ion mobility (**diaPASEF**) [3]_. Mobi-DIK is an extension of the OpenSWATH workflow [1]_
 that is optimized for ion mobility analysis as well as diapysef [2]_, a Python
-package for converting and analysing diaPASEF data.
+package for converting diaPASEF data from vendor format to open mzML format.
+
+..figure:: ../img/diapasef_openswath_extraction.png
+   :alt: diaPASEF OpenSWATH data extraction
+   :target: https://www.nature.com/articles/s41592-020-00998-0/figures/3
+   :align: center
+
+   Mobi-DIK workflow for targeted data extraction from diaPASEF data. Image adapted from figure 3 from Meir. et al. (2020) [3]_.
 
 Contact and Support
 -------------------
 
-We provide support for Mobi-DIK on `Gitter <https://gitter.im/OpenMS/OpenMS>`_
-and other available `OpenMS support channels
-<http://open-ms.sourceforge.net/support/>`_. Please address general questions to
-the open-ms-general mailing list.
+We provide support for Mobi-DIK on `OpenMS github issue tracker
+<https://github.com/OpenMS/OpenMS/issues>`_, `diapysef github issue tracker
+<https://github.com/Roestlab/dia-pasef/issues>`_
+and other available `OpenMS discord server <https://discord.gg/4TAGhqJ7s5>`_. 
 
 Installation
 ------------
@@ -40,20 +47,34 @@ conversion:
    diapysef converttdftomzml --help
    diapysef converttdftomzml --in=input.d --out=output.mzML
 
- 
 Library Generation
 ~~~~~~~~~~~~~~~~~~
 
-diapysef reformats the MaxQuant library output to OpenSwath readable formats. It
-can perform linear and nonlinear alignment for retention time and ion mobility
-drift time respectively.
+Library generation can be performed similar to traditional DIA data, see :doc:`../generic` and :doc:`../pqp`. See :doc:`../fragpipe` for a FragPipe-based spectral library generation workflow.
 
-For details, please follow instructions at :doc:`librarygeneration`.
+For the legacy library generation workflow using MaxQuant output and diapysef, please follow instructions at :doc:`librarygeneration`.
+
+Calibration Libraries
+----
+
+For retention time and ion mobility calibration, please follow instructions at :doc:`../calibration/generic` and :doc:`../calibration/run_specific`.
+
+For calibration libraries used in the original publication [3]_, please find below:
+
+- iRT files from HeLa cell lysate can be obtained here: `linear iRT files <https://drive.google.com/open?id=1S53bh_ge2CmX73p5oqtwxMI1E17hklm7>`_.
+- iRT files from HeLa cell lysate can be obtained here: `nonlinear iRT file <https://drive.google.com/open?id=1WKL7j4D1tYKLBUdrXbj3ObUfUyNb2CvS>`_.
+
+Identification and quantification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For targeted data extraction, please follow instructions at :doc:`../openswathworkflow` and see the :doc:`openswath_mobidik` section for ion mobility specific parameters.
+
+For statistical scoring and FDR estimation, please follow instructions at :doc:`../pyprophet`.
 
 Other Functionalities
 ~~~~~~~~~~~~~~~~~~~~~
 
-The data acquisition window schemes can be acquired with ``get_dia_windows.py``:
+The data acquisition window schemes can be acquired with ``get_dia_windows.py`` from the `diapysef repo <https://github.com/Roestlab/dia-pasef/blob/master/src/diapysef/scripts/get_dia_windows.py>`_:
 
 .. code-block:: bash
 
@@ -66,14 +87,6 @@ Output of the scheme can also be plotted over the MaxQuant outputs in the mz and
 .. code-block:: bash
    
    plot_dia_windows.py output_scheme.csv MQ_output_all_peptides.csv
-
-
-Data
-----
-
-- iRT files from HeLa cell lysate can be obtained here: `linear iRT files <https://drive.google.com/open?id=1S53bh_ge2CmX73p5oqtwxMI1E17hklm7>`_.
-- iRT files from HeLa cell lysate can be obtained here: `nonlinear iRT file <https://drive.google.com/open?id=1WKL7j4D1tYKLBUdrXbj3ObUfUyNb2CvS>`_.
-
 
 References
 ----------

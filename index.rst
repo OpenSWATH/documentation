@@ -107,7 +107,6 @@ The OpenSWATH Workflow
    
    docs/mobidik/mobi-dik
    docs/mobidik/dataconversion
-   docs/mobidik/librarygeneration
    docs/mobidik/openswath_mobidik
 
 .. toctree::
