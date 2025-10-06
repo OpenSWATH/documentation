@@ -9,7 +9,7 @@ coupled with ion mobility (**diaPASEF**) [3]_. Mobi-DIK is an extension of the O
 that is optimized for ion mobility analysis as well as diapysef [2]_, a Python
 package for converting diaPASEF data from vendor format to open mzML format.
 
-..figure:: ../img/diapasef_openswath_extraction.png
+.. figure:: ../img/diapasef_openswath_extraction.png
    :alt: diaPASEF OpenSWATH data extraction
    :target: https://www.nature.com/articles/s41592-020-00998-0/figures/3
    :align: center
