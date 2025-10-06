@@ -60,6 +60,9 @@ Scoring
 
 The main command will conduct semi-supervised learning and error-rate estimation in a fully automated fashion. ``--help`` will show the full selection of parameters to adjust the process. The default parameters are recommended for SCIEX TripleTOF 5600/6600 instrument data, but can be adjusted in other scenarios.
 
+.. note::
+   pyprophet supports three different classifer models for semi-supervised learning: ``LDA``, ``XGBoost`` and ``SVM``. The default is ``LDA``, however, ``XGBoost`` and ``SVM`` usually perform better in terms of identification rates. You can change the classifer by setting ``--classifier`` to ``LDA``, ``XGBoost`` or ``SVM``. 
+
 When using the IPF extension, the parameter ``--level`` can be set to ``ms2``, ``ms1`` or ``transition``. If MS2 and MS2 information should be considered together, ``--level`` can alternatively be set to ``ms1ms2``. If MS1 or transition-level data should be scored, the command is executed three times, e.g.:
 
 .. code-block:: bash
