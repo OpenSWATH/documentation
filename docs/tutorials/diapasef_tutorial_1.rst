@@ -47,7 +47,7 @@ To follow along, you will need the following software installed:
 
   - `easypqp (≥ v0.1.53)` (for spectral library generation)
   - `diapysef (≥ v1.0.10)` (for Bruker tdf file conversion)
-  - `pyprophet (≥ v3.0.1)` (for statistical scoring and FDR control)
+  - `pyprophet (≥ v3.0.2)` (for statistical scoring and FDR control)
   
 - **Docker** (optional) if you prefer running the tools in a containerized environment  
 
@@ -662,3 +662,9 @@ Finally, we can export the results to a tsv file for downstream analysis.
     # You can optionally export quantification matrices as well
     pyprophet export matrix --in=pyprophet/merged.osw --out=pyprophet/peptide_matrix.tsv --level peptide
     pyprophet export matrix --in=pyprophet/merged.osw --out=pyprophet/protein_matrix.tsv --level protein
+
+You can export a pdf that compiles key scoring diagnostics and across-run QC: target/decoy d-score histograms and densities, q-/s-value curves, p-value/π₀ fit, IDs per run, run-intersection curves, Jaccard similarity, intensity correlations, CV and violin plots, plus summary tables at 1/5/10% FDR across precursor/peptide/protein levels (including IPF when available). Use it for a quick, high-level check of identification quality, FDR behavior, and quant reproducibility across runs.
+
+.. code-block:: bash
+
+    pyprophet export  score-report --in merged.osw
