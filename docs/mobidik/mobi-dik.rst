@@ -67,7 +67,7 @@ For calibration libraries used in the original publication [1]_, please find bel
 Identification and quantification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For targeted data extraction, please follow instructions at :doc:`../openswathworkflow` and see the :doc:`openswath_mobidik` section for ion mobility specific parameters.
+For targeted data extraction, please follow instructions at :doc:`../openswath` and see the :doc:`openswath_mobidik` section for ion mobility specific parameters.
 
 For statistical scoring and FDR estimation, please follow instructions at :doc:`../pyprophet`.
 
