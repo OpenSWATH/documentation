@@ -43,6 +43,21 @@ Please obtain the latest version of msproteomicstools from `GitHub
 The instructions for the installation of the msproteomicstools :doc:`binaries`
 is applicable here as well.
 
+
+DIAlignR
+--------
+
+Please obtain the latest version of DIAlignR from `GitHub <https://github.com/shubham1637/DIAlignR>`_.
+
+The instructions for the installation of the DIAlignR :doc:`binaries` is applicable here as well.
+
+ARYCAL
+------
+
+Please obtain the latest verson of ARYCAL from `Github <https://github.com/singjc/arycal>`_.
+
+The instructions for building ARYCAL from source can be found on the `Github README Build from Source <https://github.com/singjc/arycal?tab=readme-ov-file#build-from-source>`_ section.
+
 MOBI-DIK & diapysef
 -------------------
 Please obtain the latest version of diapysef from `GitHub

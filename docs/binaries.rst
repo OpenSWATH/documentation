@@ -78,6 +78,22 @@ install and you may have to install it through Anaconda:
 
    conda install biopython
 
+DIAlignR
+--------
+
+DIAlignR is an R package and can be installed through BioConductor and requires R >= 4.0. 
+
+.. code-block:: r
+
+   if(!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+   BiocManager::install("DIAlignR")
+
+ARYCAL
+------
+
+ARYCAL is a standalone tool written in rust and can be download from the `GitHub repo release page <https://github.com/singjc/arycal/releases>`_.
+
 MOBI-DIK & diapysef
 -------------------
 MOBI-DIK uses a python package ``diapysef`` for data conversion and library
