@@ -1,6 +1,8 @@
-# Singularity / Apptainer
+Singularity / Apptainer
+======
 
-## Overview
+Overview
+--------
 
 `Apptainer (formerly Singularity) <https://apptainer.org/>`_ is a container runtime designed for HPC clusters and multi-user systems. With a single SIF file (Singularity Image Format), you can run the full OpenSWATH workflow—including OpenMS tools, PyProphet, TRIC (`feature_alignment.py`), DIAlignR, EasyPQP, SAGE, ARYCAL, mapDIA, and Percolator—without installing any dependencies.
 
@@ -10,12 +12,14 @@ This page shows three easy ways to obtain the OpenSWATH image:
 * **Option B:** Pull directly from the **OpenSWATH Docker image on GHCR** and let Apptainer convert it to SIF locally.
 * **Option C:** Pull the prebuilt SIF as an **OCI artifact** from GHCR using ORAS transport (Apptainer ≥ 1.3).
 
-## Installing Apptainer
+Installing Apptainer
+--------
 
 Follow the instructions for your platform: `Install Apptainer <https://apptainer.org/docs/>`_.
 On HPC systems, Apptainer is often already installed (e.g., as a module). Ask your system administrator if unsure.
 
-## Obtaining the Image
+Obtaining the Image
+--------
 
 Option A — Download from Release assets
 
@@ -148,7 +152,4 @@ Troubleshooting
 Software version information
 ----------------------------
 
-For image contents and version pins, see the `OpenSWATH Docker/Apptainer repository <https://github.com/OpenSWATH/docker>`_. The **Releases** page lists the corresponding SIF assets and Docker tags.
-::contentReference[oaicite:0]{index=0}
-```
-https://github.com/OpenSWATH/docker/releases
+For image contents and version pins, see the `OpenSWATH Docker/Apptainer repository <https://github.com/OpenSWATH/docker>`_. The `**GitHub Docker Releases** <https://github.com/OpenSWATH/docker/releases>_` page lists the corresponding SIF assets.
