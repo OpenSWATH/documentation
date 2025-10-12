@@ -22,14 +22,13 @@ Obtaining the Image
 --------
 
 Option A — Download from Release assets
-
-```
+~~~~~~~~
 
 1) Go to the OpenSWATH `**GitHub Docker Releases** <https://github.com/OpenSWATH/docker/releases>_` page and download the SIF artifact (e.g., ``openswath-v0.3.0.sif`` or ``openswath-latest.sif``).  
 2) Put it somewhere convenient, e.g. your home directory.
 
 Option B — Convert the Docker image to SIF locally
-```
+~~~~~~~~
 
 Apptainer can convert a public Docker/OCI image to a SIF locally (no root/admin needed):
 
@@ -46,8 +45,7 @@ apptainer pull openswath-v0.3.0.sif
 docker://ghcr.io/openswath/openswath:v0.3.0
 
 Option C — Pull a prebuilt SIF via ORAS (OCI artifact on GHCR)
-
-```
+~~~~~~~~
 
 If you’re using **Apptainer ≥ 1.3**, you can pull a prebuilt SIF directly via **ORAS** transport:
 
