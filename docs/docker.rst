@@ -20,19 +20,19 @@ Make sure that Docker is up and running in the background. On macOS or Linux, st
 
 .. code-block:: bash
 
-   # Download OpenSWATH image (openswath/openswath:latest)
-   docker pull openswath/openswath:latest
+   # Download OpenSWATH image (ghcr.io/openswath/openswath:latest) from GitHub Container Registry
+   docker pull ghcr.io/openswath/openswath:latest
 
 This will download the latest version of the OpenSWATH Docker image and cache it on your machine.
 
 .. note::
 
-   Official containers for OpenMS and related tools are available via `BioContainers <https://github.com/BioContainers>`_. The image provided here provides compatible release or development versions including related tools in an integrated container.
+   Official containers for OpenMS and related tools are available via `GitHub Container Registry <https://github.com/OpenMS/OpenMS/pkgs/container/openms-executables>`_. The image provided here provides compatible release or development versions including related tools in an integrated container.
 
 .. code-block:: bash
 
    # Generate tutorial container (osw_tutorial) and log in
-   docker run --name osw_tutorial --rm -v ~/Desktop/:/data -i -t openswath/openswath:latest
+   docker run --name osw_tutorial --rm -v ~/Desktop/:/data -i -t ghcr.io/openswath/openswath:latest
 
 This command will start a container based on the OpenSWATH image and map the local volume ``~/Desktop/`` (from your desktop) to ``/data/`` (to your container). It will open a Bash command line within the container for you to control the individual components of the workflow. If you want to exit the session, just type ``exit`` to return to your console. 
 
@@ -49,24 +49,36 @@ Within the running container, you can execute all commands as you would in a nat
    # Execute TRIC in docker
    feature_alignment.py --help
 
+   # Execute DIAlignR in docker 
+   alignTargetedRuns --help
+
+   # Execute ARYCAL in docker
+   arycal --help
+
+   # Execute EasyPQP in docker
+   easypqp --help
+
+   # Execute sage in docker
+   sage --help
+
 All data that will be stored in ``~/Desktop``, will be available in ``/data/``. For example, we can process and write back the files like this:
 
 .. code-block:: bash
 
     OpenSwathWorkflow \
     -in /data/data.mzML
-    -tr /data/library.tsv \
+    -tr /data/library.pqp \
     -tr_irt /data/iRT_assays.TraML \
     -swath_windows_file /data/SWATHwindows_analysis.tsv \
     -sort_swath_maps -batchSize 1000 \
     -readOptions cacheWorkingInMemory -tempDirectory /tmp/ \
-    -use_ms1_traces \
+    -enable_ms1 true \
     -mz_extraction_window 50 -ppm \
     -mz_correction_function quadratic_regression_delta_ppm \
     -TransitionGroupPicker:background_subtraction original \
     -RTNormalization:alignmentMethod linear \
     -Scoring:stop_report_after_feature 5 \
-    -out_tsv /data/osw_output.tsv \
+    -out_features /data/osw_output.osw \
 
 Software version information
 ----------------------------
