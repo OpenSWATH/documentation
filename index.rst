@@ -40,6 +40,7 @@ The OpenSWATH Workflow
    :caption: Installation
    
    docs/docker
+   docs/singularity
    docs/binaries
    docs/sources
 
