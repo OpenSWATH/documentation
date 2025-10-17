@@ -9,6 +9,10 @@ News
 
 .. note::
 
+   *2025-10-12:* Updated Docker image (openswath/openswath:0.3.0), and added an Apptainer image build for the latest development version of the OpenSWATH workflow, including OpenMS 3.4.1, PyProphet 3.0.2, easyPQP 0.1.53, sage 0.14.7, arycal 0.1.10, and DIAlignR 2.0.0
+
+.. note::
+
    *2025-05-09:* With OpenMS 3.4.0, OpenSWATH supports automated spectrum addition at RT feature peak apex, peak picking extracted ion mobilograms, and ion mobility scoring for identifying transitions for IPF.
 
 .. note::
